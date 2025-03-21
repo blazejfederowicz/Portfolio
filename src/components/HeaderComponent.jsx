@@ -13,7 +13,6 @@ const HeaderComponent = ()=>{
                         <h1 className="md:text-9xl text-6xl font-[Brittany]">Blazej</h1>
                     </div>
                 </div>
-               
              </div>
              <img src="src\assets\wave.svg" className="block w-full -mb-1"/>
         </div>
