@@ -1,5 +1,16 @@
+import { useState } from "react"
 
 const AboutComponent = ()=>{
+    const [frontend, setFrontend] = useState(true);
+    const [backend, setBackend] = useState(false);
+
+    const handleFrontend = ()=>{
+        return setBackend(false),setFrontend(true)
+    }
+    const handleBackend = ()=>{
+        return setBackend(true),setFrontend(false)
+    }
+
  return(<>
     <section className="pt-1 projects-gradient" id="about">
         <div className="container xl:px-10 mx-auto">
@@ -28,20 +39,81 @@ const AboutComponent = ()=>{
             </div>
         </div>
     </section>
-    <section className="container px-6 xl:max-w-5xl lg:px-0 mt-[5em] sm:mt-[35em] mx-auto md:mt-20">
-        <div className="grid sm:grid-cols-2">
-            <div className="col-start-2">
+    <section className="container px-6 xl:max-w-5xl lg:px-0 mt-[5em] sm:mt-[35em] mx-auto md:mt-20 min-h-[400px]">
+        <div className="grid md:grid-cols-2">
+            <div className="">
                 <div className="flex justify-between content-center mb-5">
-                    <div className="">
-                        <h1 className="font-semibold text-gray-900 text-2xl  ">Front-end</h1>
-                        <div className="h-2 bg-amber-600 w-[5em] mx-auto"></div>
+                    <div className={frontend?'':'cursor-pointer group'} onClick={handleFrontend}>
+                        <h1 className={`font-semibold duration-150 ease-in-out ${frontend?'text-gray-900':'text-gray-700 hover:md:text-gray-800 active:text-gray-900'} text-2xl`}>Front-end</h1>
+                        <div className={`h-2 bg-amber-600 duration-250 ease-out ${frontend? 'mx-auto w-[5em]':' w-0 group-hover:md:w-[100%] group-active::w-[100%]'} rounded-tl-4xl rounded-br-4xl`}></div>
                     </div>
-                    <div className="">
-                        <h1 className="font-semibold text-2xl text-gray-900 ">Back-end</h1>
+                    <div className={backend?'':'cursor-pointer group'} onClick={handleBackend}>
+                        <h1 className={`font-semibold text-2xl duration-150 ease-in-out ${backend?'text-gray-900':'text-gray-700 hover:md:text-gray-800 active:text-gray-900'} `}>Back-end</h1>
+                        <div className={`h-2 bg-amber-600 duration-250 ease-out ${backend? 'mx-auto w-[5em]':' w-0 group-hover:md:w-[100%] group-active::w-[100%]'} rounded-tl-4xl rounded-br-4xl`}></div>
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col">
+            <div className="col-start-1">
+                <div className="mb-5">
+                    <div className="flex justify-between content-center px-1">
+                        <h4 className="font-bold">{backend? 'Node.JS': 'HTML'}</h4>
+                        <h4 className="font-bold">{backend? '52%': '96%'}</h4>
+                    </div>
+                    <div className="h-[0.5em] mt-1 rounded-2xl bg-blue-200">
+                        <div className={`bg-blue-900 duration-600 ease-out ${backend?'w-[52%]':'w-[96%]'} h-[100%] rounded-2xl`}></div>
+                    </div>
+                </div>
+                <div className="mb-5">
+                    <div className="flex justify-between content-center px-1">
+                        <h4 className="font-bold">{backend? 'Laravel': 'CSS'}</h4>
+                        <h4 className="font-bold">{backend?'31%':'89%'}</h4>
+                    </div>
+                    <div className="h-[0.5em] mt-1 rounded-2xl bg-blue-200">
+                        <div className={`bg-blue-900 duration-600 ease-out ${backend?'w-[31%]':'w-[89%]'} h-[100%] rounded-2xl`}></div>
+                    </div>
+                </div>
+                <div className="mb-5">
+                    <div className="flex justify-between content-center px-1">
+                        <h4 className="font-bold">{backend? 'MySQL': 'JS / JQuery'}</h4>
+                        <h4 className="font-bold">{backend? '49%':'75%'}</h4>
+                    </div>
+                    <div className="h-[0.5em] mt-1 rounded-2xl bg-blue-200">
+                        <div className={`bg-blue-900 duration-600 ease-out ${backend?'w-[49%]':'w-[75%]'} h-[100%] rounded-2xl`}></div>
+                    </div>
+                </div>
+                <div className="mb-5">
+                    <div className="flex justify-between content-center px-1">
+                        <h4 className="font-bold">{backend? 'EJS': 'React.JS'}</h4>
+                        <h4 className="font-bold">{backend?'84%':'67%'}</h4>
+                    </div>
+                    <div className="h-[0.5em] mt-1 rounded-2xl bg-blue-200">
+                        <div className={`bg-blue-900 duration-600 ease-out ${backend?'w-[84%]':'w-[67%]'} h-[100%] rounded-2xl`}></div>
+                    </div>
+                </div>
+                <div className={`duration-500 ${backend?'ease-out':'ease-in'}  ${frontend?'max-h-40 shadow-inner':'max-h-0 shadow-none'} overflow-hidden`}>
+                    <div className="mb-5">
+                        <div className="flex justify-between content-center px-1">
+                            <h4 className="font-bold">Vue.JS</h4>
+                            <h4 className="font-bold">49%</h4>
+                        </div>
+                        <div className="h-[0.5em] mt-1 rounded-2xl bg-blue-200">
+                            <div className={`bg-blue-900 duration-600 ease-out w-[49%] h-[100%] rounded-2xl`}></div>
+                        </div>
+                    </div>
+                    <div className="flex justify-between content-center px-1">
+                        <h4 className="font-bold">Bootstrap</h4>
+                        <h4 className="font-bold">Tailwind</h4>
+                    </div>
+                    <div className="h-[0.5em] mt-1 rounded-2xl bg-emerald-600">
+                        <div className="bg-blue-900 w-[70%] h-[100%] rounded-2xl"></div>
+                    </div>
+                    <div className="flex justify-between content-center px-1">
+                        <h4 className="font-bold">70%</h4>
+                        <h4 className="font-bold">30%</h4>
+                    </div>
+                </div>
+            </div>
+            <div className="flex flex-col ms-auto me-auto md:me-0  my-16 md:my-0">
                 <div className=" border-b-1 border-b-gray-300 w-[20em] pb-3">
                     <p className=" text-gray-700"><span className="font-bold">Birthday :</span> 25th January 2004</p>
                 </div>
@@ -57,53 +129,6 @@ const AboutComponent = ()=>{
                 </div>
                 <div className=" border-b-1 border-b-gray-300 w-[20em] mt-3 pb-3">
                     <p className=" text-gray-700"><span className="font-bold">Freelance : </span>Avalible</p>
-                </div>
-            </div>
-            <div>
-                <div className="mb-5">
-                    <div className="flex justify-between content-center px-1">
-                        <h4 className="font-bold">HTML</h4>
-                        <h4 className="font-bold">96%</h4>
-                    </div>
-                    <div className="h-[0.5em] mt-1 rounded-2xl bg-blue-200">
-                        <div className="bg-blue-900 w-[96%] h-[100%] rounded-2xl"></div>
-                    </div>
-                </div>
-                <div className="mb-5">
-                    <div className="flex justify-between content-center px-1">
-                        <h4 className="font-bold">CSS</h4>
-                        <h4 className="font-bold">89%</h4>
-                    </div>
-                    <div className="h-[0.5em] mt-1 rounded-2xl bg-blue-200">
-                        <div className="bg-blue-900 w-[89%] h-[100%] rounded-2xl"></div>
-                    </div>
-                </div>
-                <div className="mb-5">
-                    <div className="flex justify-between content-center px-1">
-                        <h4 className="font-bold">JS / JQuery</h4>
-                        <h4 className="font-bold">75%</h4>
-                    </div>
-                    <div className="h-[0.5em] mt-1 rounded-2xl bg-blue-200">
-                        <div className="bg-blue-900 w-[75%] h-[100%] rounded-2xl"></div>
-                    </div>
-                </div>
-                <div className="mb-5">
-                    <div className="flex justify-between content-center px-1">
-                        <h4 className="font-bold">Node.JS</h4>
-                        <h4 className="font-bold">61%</h4>
-                    </div>
-                    <div className="h-[0.5em] mt-1 rounded-2xl bg-blue-200">
-                        <div className="bg-blue-900 w-[61%] h-[100%] rounded-2xl"></div>
-                    </div>
-                </div>
-                <div className="mb-5">
-                    <div className="flex justify-between content-center px-1">
-                        <h4 className="font-bold">React.JS</h4>
-                        <h4 className="font-bold">67%</h4>
-                    </div>
-                    <div className="h-[0.5em] mt-1 rounded-2xl bg-blue-200">
-                        <div className="bg-blue-900 w-[67%] h-[100%] rounded-2xl"></div>
-                    </div>
                 </div>
             </div>
         </div>
