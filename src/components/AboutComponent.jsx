@@ -67,7 +67,7 @@ const AboutComponent = ()=>{
                         </h4>
                     </div>
                     <div className="h-[0.5em] mt-1 rounded-2xl bg-blue-200">
-                        <div className={`bg-blue-900 duration-600 ease-out ${backend?'w-[52%]':'w-[96%]'} h-[100%] rounded-2xl`}></div>
+                        <div className={`bg-blue-600 duration-600 ease-out ${backend?'w-[52%]':'w-[96%]'} h-[100%] rounded-2xl`}></div>
                     </div>
                 </div>
                 <div className="mb-5">
@@ -78,7 +78,7 @@ const AboutComponent = ()=>{
                         </h4>
                     </div>
                     <div className="h-[0.5em] mt-1 rounded-2xl bg-blue-200">
-                        <div className={`bg-blue-900 duration-600 ease-out ${backend?'w-[31%]':'w-[89%]'} h-[100%] rounded-2xl`}></div>
+                        <div className={`bg-blue-600 duration-600 ease-out ${backend?'w-[31%]':'w-[89%]'} h-[100%] rounded-2xl`}></div>
                     </div>
                 </div>
                 <div className="mb-5">
@@ -89,7 +89,7 @@ const AboutComponent = ()=>{
                         </h4>
                     </div>
                     <div className="h-[0.5em] mt-1 rounded-2xl bg-blue-200">
-                        <div className={`bg-blue-900 duration-600 ease-out ${backend?'w-[49%]':'w-[75%]'} h-[100%] rounded-2xl`}></div>
+                        <div className={`bg-blue-600 duration-600 ease-out ${backend?'w-[49%]':'w-[75%]'} h-[100%] rounded-2xl`}></div>
                     </div>
                 </div>
                 <div className="mb-5">
@@ -100,7 +100,7 @@ const AboutComponent = ()=>{
                         </h4>
                     </div>
                     <div className="h-[0.5em] mt-1 rounded-2xl bg-blue-200">
-                        <div className={`bg-blue-900 duration-600 ease-out ${backend?'w-[84%]':'w-[67%]'} h-[100%] rounded-2xl`}></div>
+                        <div className={`bg-blue-600 duration-600 ease-out ${backend?'w-[84%]':'w-[67%]'} h-[100%] rounded-2xl`}></div>
                     </div>
                 </div>
                 <div className={`duration-500 relative ${backend?'ease-out':'ease-in'}  ${frontend?'max-h-40':'max-h-0'} overflow-hidden`}>
@@ -110,19 +110,19 @@ const AboutComponent = ()=>{
                             <h4 className="font-bold">49%</h4>
                         </div>
                         <div className="h-[0.5em] mt-1 rounded-2xl bg-blue-200">
-                            <div className={`bg-blue-900 duration-600 ease-out w-[49%] h-[100%] rounded-2xl`}></div>
+                            <div className={`bg-blue-600 duration-600 ease-out w-[49%] h-[100%] rounded-2xl`}></div>
                         </div>
                     </div>
                     <div className="flex justify-between content-center px-1">
                         <h4 className="font-bold">Bootstrap</h4>
                         <h4 className="font-bold">Tailwind</h4>
                     </div>
-                    <div className="h-[0.5em] mt-1 rounded-2xl bg-emerald-600">
-                        <div className="bg-blue-900 w-[70%] h-[100%] rounded-2xl"></div>
+                    <div className="h-[0.5em] mt-1 rounded-2xl bg-cyan-500">
+                        <div className="bg-purple-700 w-[60%] h-[100%] rounded-2xl"></div>
                     </div>
                     <div className="flex justify-between content-center px-1">
-                        <h4 className="font-bold">70%</h4>
-                        <h4 className="font-bold">30%</h4>
+                        <h4 className="font-bold">60%</h4>
+                        <h4 className="font-bold">40%</h4>
                     </div>
                 <div className={`absolute bottom-0 w-full transition-transform ${frontend?'translate-y-[5em] delay-[430ms] ease-in':'translate-y-[0em] duration-500 ease-out'} left-0 bg-gradient-to-t h-[5em] from-gray-50 to-transparent `}></div>
 

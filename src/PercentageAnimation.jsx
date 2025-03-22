@@ -15,8 +15,9 @@ export default function PercentageAnimation({first, second, duration,rerender}){
             let max = Math.max(secondNum,firstNum)
             const newTarget = target ===second?first:second;
             const shouldIncrement = target < newTarget;
-            console.log(`target: ${target}\nnewTarget: ${newTarget}\nshould Increment: ${shouldIncrement}`)
             setTarget(newTarget)
+
+            if(min-max===0) return
           
             if (shouldIncrement) {
               let i = min;
@@ -32,7 +33,7 @@ export default function PercentageAnimation({first, second, duration,rerender}){
               let i = max;
               intervalId.current = setInterval(() => {
                 i--;
-                if (i <= min) {
+                if (i < min) {
                   clearInterval(intervalId.current);
                 } else {
                   setPercentage(i);
