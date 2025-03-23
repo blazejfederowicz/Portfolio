@@ -13,8 +13,8 @@ function App() {
     <>
       <HeaderComponent/>
       <AboutComponent/>
-      <FeatureComponent/>
       <ProjectsComponent/>
+      <FeatureComponent/>
       <ContactComponent/>
       <FooterComponent/>
     </>

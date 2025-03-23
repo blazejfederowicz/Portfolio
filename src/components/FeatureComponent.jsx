@@ -2,7 +2,7 @@ import HeroSectionCode from "./HeroSectionCode"
 
 const FeatureComponent = ()=>{
     return(<>
-    <section id="projects" className="md:mt-0">
+    <section id="projects" className="">
       <div className=" py-10 md:py-32">
         <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
           <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-zinc-800 sm:text-5xl">My projects</p>
