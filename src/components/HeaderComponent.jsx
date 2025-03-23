@@ -1,4 +1,5 @@
 import NavbarComponent from "./NavbarComponent"
+import { Reveal } from "./Reveal"
 
 const HeaderComponent = ()=>{
     return(<>
@@ -8,8 +9,7 @@ const HeaderComponent = ()=>{
         <div className="flex w-full flex-col h-full">
             <div className="container pt-20 sm:grow mx-auto">
                 <div className="grid  sm:grid-cols-2 h-full content-center 2xl:translate-y-20">
-                    <div className=""></div>
-                    <div className="text-white flex h-full sm:justify-end items-start flex-col text-center mb-10 sm:mb-8">
+                    <div className="text-white col-start-2 flex h-full sm:justify-end items-start flex-col text-center mb-10 sm:mb-8">
                         <h1 className="md:text-9xl text-6xl font-[Brittany]">Blazej</h1>
                     </div>
                 </div>

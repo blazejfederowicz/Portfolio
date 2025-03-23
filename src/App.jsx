@@ -6,6 +6,7 @@ import FeatureComponent from './components/FeatureComponent'
 import ProjectsComponent from './components/ProjectsComponent'
 import ContactComponent from './components/ContanctComponent'
 import FooterComponent from './components/FooterComponent'
+import { Reveal } from './components/Reveal'
 
 function App() {
 
