@@ -14,7 +14,7 @@ const HeaderComponent = ()=>{
                     </div>
                 </div>
              </div>
-             <img src="src\assets\wave.svg" className="block w-full -mb-1"/>
+             <img src="src\assets\wave.svg"  className="block w-full -mb-1 "/>
         </div>
     </section>
     </>)

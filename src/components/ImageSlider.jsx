@@ -5,7 +5,7 @@ import image2 from '../assets/fireworks.jpg'
 import image3 from '../assets/fireworks.jpg'
 import { filter } from "framer-motion/client";
 
-const DRAG_BUFFER = 50
+const DRAG_BUFFER = 80
 
 export const ImageSlider =()=>{
     const [positionIndexes, setPositionIndexes]= useState(0);
