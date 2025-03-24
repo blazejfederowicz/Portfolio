@@ -18,7 +18,11 @@ const ProjectsComponent = ()=>{
                 <div className="absolute h-[calc(100%+2em)] right-0 bg-gradient-to-l w-[20em] from-gray-50 to-transparent"></div>
                 <div className="absolute w-full bottom-[-1em] bg-gradient-to-t h-[7em] from-gray-50 to-transparent"></div>
             </div>
+            <div className="grid grid-cols-2 w-full">
+            <div className=""></div>
             <ImageSlider/>
+
+            </div>
         </section>
     </>)
    }
