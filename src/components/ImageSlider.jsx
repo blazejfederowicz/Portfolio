@@ -104,6 +104,7 @@ export const ImageSlider =()=>{
                 animate={{translateX:translateX}}
             >
            { images.map((e,i)=>(
+            <>
                 <motion.div
                     key={i}
                     ref={i === positionIndexes?imageRef:null}
@@ -117,6 +118,7 @@ export const ImageSlider =()=>{
                 >
                 <a href={e.href} className={`w-full h-full ${position[i]==='center'?'block':''}`}></a>
                 </motion.div>
+                </>
            ))}
            </motion.div>
         </div>

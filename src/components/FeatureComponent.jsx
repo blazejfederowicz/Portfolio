@@ -4,12 +4,9 @@ import { Reveal } from "./Reveal"
 const FeatureComponent = ()=>{
     return(<>
     <section id="projects" className="">
-      <div className=" py-10 md:py-32">
+      <div className=" pb-10 md:pb-32">
         <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
           <div className="flex justify-center items-center">
-          <Reveal>
-          <p className="mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-zinc-800 sm:text-5xl">My projects</p>
-          </Reveal>
           </div>
           <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
             <div className="relative lg:row-span-2">
