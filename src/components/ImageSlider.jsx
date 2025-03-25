@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from "react";
+import React,{ useEffect, useRef, useState } from "react";
 import {motion, useMotionValue} from 'framer-motion';
 import image1 from '../assets/laptop.jpg'
 import image2 from '../assets/fireworks.jpg'
@@ -11,6 +11,10 @@ export const ImageSlider =()=>{
     const [positionIndexes, setPositionIndexes]= useState(0);
     const [position, setPosition] = useState([])
     const [dragging, setDragging] = useState(false);
+    const [translateX, setTranslateX] = useState('0px')
+    const [windowSize, setWindowSize] = useState(window.innerWidth);
+    const carouselRef = useRef(null);
+    const imageRef = useRef(null);
     const dragX = useMotionValue(0);
 
     const handleClick = (i)=>{
@@ -51,6 +55,31 @@ export const ImageSlider =()=>{
     useEffect(()=>{
         positions()
     },[positionIndexes])
+
+    useEffect(()=>{
+        const handleResize = ()=>{
+            setWindowSize(window.innerWidth)
+        }
+
+        window.addEventListener('resize',handleResize)
+
+        return()=>{
+         window.removeEventListener('resize', handleResize)
+        }
+    },[])
+
+    useEffect(()=>{
+        const carouselWidth = carouselRef.current?.offsetWidth || windowSize;
+        const imageWidth = imageRef.current?.offsetWidth || carouselWidth / images.length;
+
+        const newTranslateX =
+            windowSize < 640
+            ? `-${positionIndexes}00%`
+            : `${(carouselWidth / 2) - (imageWidth / 2) - (positionIndexes * imageWidth)}px`;
+
+            setTranslateX(newTranslateX);
+
+    },[windowSize])
     
 
     const variants = {
@@ -62,9 +91,9 @@ export const ImageSlider =()=>{
     }
 
     return(
-        <div className=" w-full flex items-center relative overflow-hidden h-[800px]">
+        <div ref={carouselRef} className=" w-full flex items-center relative overflow-hidden">
             <motion.div 
-                className="relative w-full h-[30em] cursor-grab active:cursor-grabbing flex items-start justify-start mb-20"
+                className="relative w-full h-[20em] md:h-[30em] cursor-grab active:cursor-grabbing flex items-start justify-start mb-20"
                 drag="x"
                 dragConstraints={{left:0,right:0}}
                 onDragStart={handleDragStart}
@@ -72,17 +101,18 @@ export const ImageSlider =()=>{
                 style={{
                     x:dragX
                 }}
-                animate={{translateX:`${positionIndexes*23}%`}}
+                animate={{translateX:translateX}}
             >
            { images.map((e,i)=>(
                 <motion.div
                     key={i}
-                    variants={variants}
+                    ref={i === positionIndexes?imageRef:null}
                     onClick={()=>handleClick(i)}
                     style={{background:`url(${e.img})`,backgroundPosition:'center',backgroundSize:"cover"}}
+                    variants={windowSize>639&&variants}
                     initial="center"
-                    animate={position[i]}
-                    className="rounded-2xl absolute w-[20em] h-[30em] active:cursor-grabbing"
+                    animate={windowSize<640?{scale:0.9}:position[i]}
+                    className="rounded-2xl sm:absolute aspect-video sm:aspect-auto shrink-0 sm:shrink w-full sm:w-[15em] md:w-[20em] h-[20em] md:h-[30em] active:cursor-grabbing"
                     transition={{duration:0.5}}
                 >
                 <a href={e.href} className={`w-full h-full ${position[i]==='center'?'block':''}`}></a>

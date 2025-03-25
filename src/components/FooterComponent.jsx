@@ -13,7 +13,7 @@ const FooterComponent = ()=>{
               <div className="relative">
                 <input type="email" id="email" name="email" placeholder="Enter your email" className="bg-slate-50 text-xs rounded-3xl py-3 px-6 w-full text-zinc-500 border-2 border-zinc-300 focus:border-zinc-400 outline-none" />
                 <button className="absolute top-[50%] right-1 translate-y-[-48%] cursor-pointer ">
-                    <i class="bi bi-arrow-right-circle-fill text-sky-950 text-4xl duration-100 ease-in-out hover:md:text-blue-950 active:text-blue-950"></i>
+                    <i className="bi bi-arrow-right-circle-fill text-sky-950 text-4xl duration-100 ease-in-out hover:md:text-blue-950 active:text-blue-950"></i>
                 </button>
               </div>
             </div>

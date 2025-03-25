@@ -12,14 +12,18 @@ const ProjectsComponent = ()=>{
             </Reveal>
         </div>
         <section className="w-full  relative bg-blue-50 border-t-[1px] border-t-zinc-400 ">
-            <div className="absolute w-full h-full top-[-1em] left-0 z-50 pointer-events-none">
+            <div className="absolute w-full h-full top-[-1em] left-0 md:z-20 pointer-events-none">
                 <div className="absolute w-full bottom-[-1em] bg-gradient-to-t h-[7em] from-gray-50 to-transparent"></div>
                 <div className="absolute h-[calc(100%+2em)] left-0 bg-gradient-to-r w-[20em] from-gray-50 to-transparent"></div>
                 <div className="absolute h-[calc(100%+2em)] right-0 bg-gradient-to-l w-[20em] from-gray-50 to-transparent"></div>
                 <div className="absolute w-full bottom-[-1em] bg-gradient-to-t h-[7em] from-gray-50 to-transparent"></div>
             </div>
-            <div className="grid grid-cols-2 w-full">
-            <div className=""></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full p-10 md:p-20">
+            <div className="w-full flex items-start justify-center flex-col z-50 relative">
+                <div className="h-[30em] w-full mb-20">
+                    <p className="text-balance text-5xl text-zinc-800 font-semibold">test</p>
+                </div>
+            </div>
             <ImageSlider/>
 
             </div>
