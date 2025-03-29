@@ -3,7 +3,6 @@ import './App.css'
 import { motion, useAnimation} from 'motion/react'
 import HeaderComponent from './components/HeaderComponent'
 import AboutComponent from './components/AboutComponent'
-import FeatureComponent from './components/FeatureComponent'
 import ProjectsComponent from './components/ProjectsComponent'
 import ContactComponent from './components/ContanctComponent'
 import FooterComponent from './components/FooterComponent'
@@ -18,8 +17,7 @@ function App() {
       <HeaderComponent/>
       <AboutComponent/>
       <ProjectsComponent/>
-      <div className="bg-stone-950">
-        <FeatureComponent/>
+      <div className="bg-zinc-950">
         <ContactComponent/>
         <FooterComponent/>
       </div>
