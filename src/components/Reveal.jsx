@@ -1,4 +1,4 @@
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useInView, useAnimation } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 
 export const Reveal = ({ children, width = "fit-content" }) => {

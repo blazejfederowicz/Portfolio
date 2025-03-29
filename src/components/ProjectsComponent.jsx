@@ -1,23 +1,19 @@
-import FeatureComponent from "./FeatureComponent"
+import {motion, useScroll, useTransform } from 'motion/react'
+import { useRef } from 'react'
 import { ImageSlider } from "./ImageSlider"
 import { Reveal } from "./Reveal"
 
-const ProjectsComponent = ()=>{
-    return(<>
-        {/* <div className="  flex justify-center items-center">
-            <Reveal>
-            <p className="mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-zinc-800 sm:text-5xl">
-                My projects
-                </p>
-            </Reveal>
-        </div> */}
-        <section className="w-full mt-10 md:mt-32 relative bg-blue-50 border-t-[1px] border-t-zinc-400 ">
-            <div className="absolute w-full h-full top-[-1em] left-0 md:z-20 pointer-events-none">
-                <div className="absolute w-full bottom-[-1em] bg-gradient-to-t h-[7em] from-gray-50 to-transparent"></div>
-                <div className="absolute h-[calc(100%+2em)] left-0 bg-gradient-to-r w-[20em] from-gray-50 to-transparent"></div>
-                <div className="absolute h-[calc(100%+2em)] right-0 bg-gradient-to-l w-[20em] from-gray-50 to-transparent"></div>
-                <div className="absolute w-full bottom-[-1em] bg-gradient-to-t h-[7em] from-gray-50 to-transparent"></div>
-            </div>
+const ProjectsComponent=()=>{
+    const ref = useRef(null)
+    const {scrollYProgress} = useScroll({
+        target:ref,
+        offset:['start start','end end']
+    })
+
+  const bgColor = useTransform(scrollYProgress,[0,1],['#ffffff00','rgb(12, 10, 9)'])
+    return( 
+        <motion.div ref={ref} className='md:mt-32' style={{backgroundColor:bgColor}}>
+            <section className="w-full mt-10 h-[150vh] relative  border-t-[1px] border-t-zinc-400 ">
             <div className="grid grid-cols-1 md:grid-cols-2 w-full p-10 md:p-20">
             <div className="w-full flex items-start justify-center flex-col z-50 relative">
                 <div className="max-w-[35em] w-full mb-10 md:mb-20">
@@ -33,8 +29,9 @@ const ProjectsComponent = ()=>{
             <ImageSlider/>
 
             </div>
-        </section>
-    </>)
-   }
-   
-   export default ProjectsComponent
+            </section>
+        </motion.div>
+        )
+}
+
+export default ProjectsComponent

@@ -1,9 +1,8 @@
 import React,{ useEffect, useRef, useState } from "react";
-import {motion, useMotionValue} from 'framer-motion';
+import {motion, useMotionValue} from 'motion/react';
 import image1 from '../assets/laptop.jpg'
 import image2 from '../assets/fireworks.jpg'
 import image3 from '../assets/fireworks.jpg'
-import { filter } from "framer-motion/client";
 
 const DRAG_BUFFER = 80
 
@@ -104,7 +103,6 @@ export const ImageSlider =()=>{
                 animate={{translateX:translateX}}
             >
            { images.map((e,i)=>(
-            <>
                 <motion.div
                     key={i}
                     ref={i === positionIndexes?imageRef:null}
@@ -118,7 +116,6 @@ export const ImageSlider =()=>{
                 >
                 <a href={e.href} className={`w-full h-full ${position[i]==='center'?'block':''}`}></a>
                 </motion.div>
-                </>
            ))}
            </motion.div>
         </div>

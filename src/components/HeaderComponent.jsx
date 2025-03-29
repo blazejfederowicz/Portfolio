@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal"
 
 const HeaderComponent = ()=>{
     return(<>
-    <section className="w-full custom-container 2xl:h-full relative">
+    <section className="w-full custom-container 2xl:h-lvh relative">
        <NavbarComponent/>
        <div className="gradient hidden sm:block absolute w-[75em] h-[39em] -top-[25em] -right-[35em]"></div>
         <div className="flex w-full flex-col h-full">
