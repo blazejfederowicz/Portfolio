@@ -19,7 +19,7 @@ const ProjectsComponent=()=>{
     return( 
         <motion.div ref={ref} className='' style={{background:bgColor}}>
             <section className="w-full min-h-[150vh] relative  border-t-[1px] border-t-zinc-400 ">
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full px-10 pt-10 md:pt-20 md:px-20">
+            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 max-w-[1900px] px-10 pt-10 md:pt-20 md:px-20">
             <div className="w-full flex items-start justify-center flex-col z-50 relative">
                 <div className="max-w-[35em] w-full mb-10 md:mb-20">
                     <Reveal>

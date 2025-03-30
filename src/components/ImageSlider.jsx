@@ -74,7 +74,7 @@ export const ImageSlider =()=>{
         const newTranslateX =
             windowSize < 640
             ? `-${positionIndexes}00%`
-            : `${(carouselWidth / 2) - (imageWidth / 2)}px`;
+            : `${positionIndexes===1?(carouselWidth / 2) - (imageWidth / 2):positionIndexes===0?0:(carouselWidth ) - (imageWidth)}px`;
 
             setTranslateX(newTranslateX);
 
@@ -90,7 +90,7 @@ export const ImageSlider =()=>{
     }
 
     return(
-        <div ref={carouselRef} className=" w-full flex items-center relative overflow-hidden">
+        <div ref={carouselRef} className=" w-full flex flex-col items-center relative overflow-hidden">
             <motion.div 
                 className="relative w-full h-[20em] md:h-[30em] cursor-grab active:cursor-grabbing flex items-start justify-start mb-20"
                 drag="x"
@@ -101,6 +101,12 @@ export const ImageSlider =()=>{
                     x:dragX
                 }}
                 animate={{translateX:translateX}}
+                transition={{
+                    type:'spring',
+                    mass:"3",
+                    stiffness:"400",
+                    damping:"50",
+                }}
             >
            { images.map((e,i)=>(
                 <motion.div
@@ -110,7 +116,7 @@ export const ImageSlider =()=>{
                     style={{background:`url(${e.img})`,backgroundPosition:'center',backgroundSize:"cover"}}
                     variants={windowSize>639&&variants}
                     initial="center"
-                    animate={windowSize<640?{scale:0.9}:position[i]}
+                    animate={windowSize<640?{scale:0.95}:position[i]}
                     className="rounded-2xl sm:absolute aspect-video sm:aspect-auto shrink-0 sm:shrink w-full sm:w-[15em] md:w-[20em] h-[20em] md:h-[30em] active:cursor-grabbing"
                     transition={{duration:0.5}}
                 >
@@ -118,6 +124,15 @@ export const ImageSlider =()=>{
                 </motion.div>
            ))}
            </motion.div>
+           <div className="mx-auto flex gap-2 p-1">
+            {
+                images.map((e,i)=>(
+                    <div key={i} style={{background:'radial-gradient(circle, rgba(156,156,156,1) 0%, rgba(115,115,115,1) 100%)'}} className="w-4 h-4 bg-neutral-500 rounded-full">
+                        <div onClick={()=> handleClick(i)} style={{background:positionIndexes===i&&'radial-gradient(circle, rgba(158,92,255,1) 0%, rgba(227,205,242,1) 100%)'}} className={`h-full w-full rounded-full ${positionIndexes===i?' bg-fuchsia-900 scale-105':'cursor-pointer'}`}></div>
+                    </div>
+                ))
+            }
+           </div>
         </div>
     )
 }
