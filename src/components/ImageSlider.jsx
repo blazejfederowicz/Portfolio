@@ -74,11 +74,11 @@ export const ImageSlider =()=>{
         const newTranslateX =
             windowSize < 640
             ? `-${positionIndexes}00%`
-            : `${(carouselWidth / 2) - (imageWidth / 2) - (positionIndexes * imageWidth)}px`;
+            : `${(carouselWidth / 2) - (imageWidth / 2)}px`;
 
             setTranslateX(newTranslateX);
 
-    },[windowSize])
+    },[windowSize, positionIndexes])
     
 
     const variants = {

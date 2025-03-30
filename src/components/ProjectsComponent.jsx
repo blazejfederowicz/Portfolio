@@ -11,15 +11,15 @@ const ProjectsComponent=()=>{
         offset:['start start','end end']
     })
 
-    const bgColor = useTransform(scrollYProgress,[0,1],['rgb(240, 249, 255)','#09090b'])
-    const textColor = useTransform(scrollYProgress,[0,1],['rgb(39, 39, 42)', 'rgb(244, 244, 245)'])
-    const descriptionColor = useTransform(scrollYProgress,[0,1],['rgb(74, 85, 101)', 'rgb(243, 244, 246)'])
+    const bgColor = useTransform(scrollYProgress,[0,1],["rgb(240, 249, 255)", "rgba(0,0,0,0)"])
+    const textColor = useTransform(scrollYProgress,[0,0.5,1],['rgb(39, 39, 42)', 'rgb(255, 165, 0)', 'rgb(244, 244, 245)'])
+    const descriptionColor = useTransform(scrollYProgress,[0,0.5,1],['rgb(74, 85, 101)', 'rgb(0, 255, 255)', 'rgb(243, 244, 246)'])
     
 
     return( 
-        <motion.div ref={ref} className='md:mt-32' style={{backgroundColor:bgColor}}>
-            <section className="w-full mt-10 min-h-[150vh] relative  border-t-[1px] border-t-zinc-400 ">
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full p-10 md:p-20">
+        <motion.div ref={ref} className='' style={{background:bgColor}}>
+            <section className="w-full min-h-[150vh] relative  border-t-[1px] border-t-zinc-400 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full px-10 pt-10 md:pt-20 md:px-20">
             <div className="w-full flex items-start justify-center flex-col z-50 relative">
                 <div className="max-w-[35em] w-full mb-10 md:mb-20">
                     <Reveal>
