@@ -4,7 +4,7 @@ import image1 from '../assets/the_calm_corner.png'
 import image2 from '../assets/the_calm_corner.png'
 import image3 from '../assets/fireworks.jpg'
 import { delay } from "motion";
-import { Reveal } from "./Reveal";
+import { Reveal } from "../utils/Reveal";
 
 const DRAG_BUFFER = 80
 

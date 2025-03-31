@@ -1,9 +1,45 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Reveal } from "../utils/Reveal";
 
 const NavbarComponent = ()=>{
     const [menuOpen, setMenuOpen] = useState(false);
     const [userMenuOpen, setUserMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [animation, setAnimation] = useState(false)
+    const [showMenu, setShowMenu] = useState(false);
+    const navRef = useRef(null);
+    const popupRef = useRef(null);
+
+    useEffect(() => {
+      if (menuOpen) {
+        setShowMenu(true);
+      } else {
+        setTimeout(() => setShowMenu(false), 300);
+      }
+
+    }, [menuOpen]);
+
+    useEffect(()=>{
+      const handleClickOutside=(e,ref,func)=>{
+        if(ref.current && !ref.current.contains(e.target)){
+          func(false)
+        }
+      }
+
+      document.addEventListener("mousedown",(e)=> handleClickOutside(e, navRef, setMenuOpen));
+      document.addEventListener("mousedown",(e)=> handleClickOutside(e, popupRef, setUserMenuOpen));  
+      
+      return()=>{
+        document.removeEventListener("mousedown",(e)=> handleClickOutside(e, navRef, setMenuOpen));
+        document.removeEventListener("mousedown",(e)=> handleClickOutside(e, popupRef, setUserMenuOpen));  
+      }
+    },[])
+
+    const handleAnimation= ()=>{
+      setAnimation(true);
+
+      setTimeout(()=>setAnimation(false),[1000])
+    }
 
     useEffect(() => {
       const handleScroll = () => {
@@ -15,9 +51,9 @@ const NavbarComponent = ()=>{
     }, []);
 
     return(<>
-    <nav className={`fixed top-0 inset-x-0 z-[1000] duration-300 ${
-        isScrolled || menuOpen ? "bg-black/35 backdrop-blur-xs shadow-lg " : "bg-transparent "
-      } ${isScrolled?"py-4":"py-6"}`}>
+    <nav ref={navRef} className={`fixed top-0 inset-x-0 z-[1000] duration-300 ${
+        isScrolled || menuOpen ? "bg-neutral-800/35 backdrop-blur-xs shadow-lg " : "bg-transparent "
+      } ${isScrolled?"py-4":"py-6"} ${menuOpen ? "max-h-[400px]" : "max-h-[80px]"} ${showMenu && 'overflow-hidden'}`}>
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -39,44 +75,80 @@ const NavbarComponent = ()=>{
             </button>
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex shrink-0 items-center text-4xl text-white">
-            <i className="bi bi-cup-hot-fill"></i>
+            <div className="flex shrink-0 items-center text-4xl text-white/90 hover:text-white active:text-white cursor-pointer">
+              <a href="#home" onClick={handleAnimation} className={` duration-200 ease-in ${animation?'scale-110 animate-spin text-white':'scale-100'}`}>
+              <Reveal>
+                <i className="bi bi-cup-hot-fill"></i>
+              </Reveal>
+              </a>
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <div className="hidden sm:ml-6 sm:block me-4">
                 <div className="flex space-x-4">
-                <a href="#home" className="px-3 py-2 text-balance font-light duration-100 ease-in text-white hover:md:translate-y-1 hover:md:font-normal active:font-normal">Home</a>
-                <a href="#about" className="hover:md:translate-y-1 duration-100 ease-in px-3 py-2 text-balance font-light text-white hover:md:font-normal active:font-normal">About</a>
-                <a href="#contact" className="hover:md:translate-y-1 duration-100 ease-in px-3 py-2 text-balance font-light text-white hover:md:font-normal active:font-normal">Contact</a>
+                <a href="#home" className="px-3 py-2 text-balance font-light duration-100 ease-in text-white hover:md:translate-y-1 hover:md:font-normal active:font-normal">
+                  <Reveal>
+                    Home
+                  </Reveal>
+                  </a>
+                <a href="#about" className="hover:md:translate-y-1 duration-100 ease-in px-3 py-2 text-balance font-light text-white hover:md:font-normal active:font-normal">
+                  <Reveal>
+                    About
+                  </Reveal>
+                </a>
+                <a href="#contact" className="hover:md:translate-y-1 duration-100 ease-in px-3 py-2 text-balance font-light text-white hover:md:font-normal active:font-normal">
+                  <Reveal>
+                    Contact
+                  </Reveal>
+                </a>
                 </div>
             </div>
-            <button type="button" className="relative rounded-full cursor-pointer p-1 text-gray-300 active:text-white hover:text-white duration-100 ease-in-out focus:outline-hidden ">
-                <span className="sr-only">Search</span>
-                <i className="bi bi-search text-xl"></i>
-            </button>
             <div className="relative ml-3">
-                <div>
+                <div className="ms-5">
                     <button className="relative rounded-full cursor-pointer p-1 text-gray-300 active:text-white hover:text-white duration-100 ease-in-out focus:outline-hidden " onClick={() => setUserMenuOpen(!userMenuOpen)}>
-                        <span className="sr-only">Open user menu</span>
-                        <i className="bi bi-chat-dots-fill text-xl"></i>
+                        <Reveal>
+                          <span className="sr-only">Open user menu</span>
+                          <i className="bi bi-three-dots text-lg"></i>
+                        </Reveal>
                     </button>
                 </div>
-                {userMenuOpen && (
-                <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 focus:outline-hidden" role="menu" aria-orientation="vertical" id="user-menu" aria-labelledby="user-menu-button" tabIndex="-1">
-                    <a href="#" className="block px-4 py-2 text-sm  text-gray-700 hover:underline underline-offset-4 active:underline" role="menuitem" tabIndex="-1" id="user-menu-item-0">Your Profile</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:underline underline-offset-4 active:underline" role="menuitem" tabIndex="-1" id="user-menu-item-1">Settings</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:underline underline-offset-4 active:underline" role="menuitem" tabIndex="-1" id="user-menu-item-2">Sign out</a>
-                </div>)}
+                <div ref={popupRef} className={`transition-opacity duration-200 ease-in ${userMenuOpen?'opacity-100 pointer-events-auto':'opacity-0 pointer-events-none'} absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white pt-1 pb-2 ring-1 shadow-lg ring-black/5 focus:outline-hidden`}role="menu" aria-orientation="vertical" id="user-menu" aria-labelledby="user-menu-button" tabIndex="-1">
+                    <a href="https://github.com/blazejfederowicz" target="_blank" className="flex justify-between relative group mx-4 py-1 my-1 text-sm  text-gray-700 hover:text-blue-950 active:text-blue-900" role="menuitem" tabIndex="-1" id="user-menu-item-0">
+                      <span className="absolute -z-10"><i className="bi bi-github"></i> Blazej</span>
+                      <span className="group-hover:ms-16 group-active:ms-16 ms-4 me-2 duration-150 ease-in-out bg-white">
+                        <span className="opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity delay-75 duration-300 ease-out">/</span> Github
+                      </span>
+                      <i className="bi bi-box-arrow-up-right"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/błażej-federowicz-6a25b0320/" target="_blank" className="flex relative justify-between group mx-4 py-1 text-sm text-gray-700 hover:text-blue-950 active:text-blue-900" role="menuitem" tabIndex="-1" id="user-menu-item-1">
+                      <span className="absolute -z-10"><i className="bi bi-linkedin"></i> Blazej</span>
+                      <span className="group-hover:ms-16 group-active:ms-16 duration-150 ease-in-out ms-4 me-2 bg-white">
+                        <span className="opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity delay-75 duration-300 ease-out">/</span> Linkdin
+                      </span>
+                      <i className="bi bi-box-arrow-up-right"></i>
+                    </a>
+                </div>
             </div>
           </div>
         </div>
       </div>
-      {menuOpen && (
+      {showMenu && (
         <div className="space-y-1 sm:hidden px-2 pt-2 pb-3">
-          <a href="#home" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-white active:text-white">Home</a>
-          <a href="#about" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-white active:text-white">About</a>
-          <a href="#contact" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-white active:text-white">Contact</a>
+          <a href="#home" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-white active:text-white">
+            <Reveal>
+              Home
+            </Reveal>
+          </a>
+          <a href="#about" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-white active:text-white">
+            <Reveal>
+              About
+            </Reveal>
+          </a>
+          <a href="#contact" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-white active:text-white">
+            <Reveal>
+              Contact
+            </Reveal>
+          </a>
         </div>
       )}
     </nav>

@@ -1,6 +1,6 @@
 import HeroSectionCode from "./HeroSectionCode"
 import { useTransform, motion } from "motion/react"
-import { Reveal } from "./Reveal"
+import { Reveal } from "../utils/Reveal"
 
 const FeatureComponent = ({scroll})=>{
   const boldTextColor = useTransform(scroll, [0.1, 0.5, 1], ['rgb(3, 7, 18)', 'rgb(255, 165, 0)', 'rgb(249, 250, 251)']);

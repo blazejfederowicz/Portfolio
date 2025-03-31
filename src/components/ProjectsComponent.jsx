@@ -2,7 +2,7 @@ import FeatureComponent from './FeatureComponent'
 import {motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
 import { ImageSlider } from "./ImageSlider"
-import { Reveal } from "./Reveal"
+import { Reveal } from "../utils/Reveal"
 
 const ProjectsComponent=()=>{
     const ref = useRef(null)

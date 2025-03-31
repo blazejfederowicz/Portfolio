@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react"
-import PercentageAnimation from "../PercentageAnimation";
-import { Reveal } from "./Reveal";
+import PercentageAnimation from "../utils/PercentageAnimation";
+import { Reveal } from "../utils/Reveal";
 
 const AboutComponent = ()=>{
     const [frontend, setFrontend] = useState(true);

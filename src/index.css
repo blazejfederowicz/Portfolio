@@ -1,7 +1,2 @@
 @import "tailwindcss";
 @import "bootstrap-icons/font/bootstrap-icons.css";
-
-@font-face {
-  font-family: 'Brittany';
-  src: url(/src/assets/BrittanySignature.ttf);
-}
