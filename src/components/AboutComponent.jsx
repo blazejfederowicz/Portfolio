@@ -193,7 +193,12 @@ const AboutComponent = ()=>{
                 </div>
                 <div className=" border-b-1 border-b-gray-300 mt-3 pb-3">
                     <Reveal>
-                    <p className=" text-gray-700"><span className="font-bold">Email : </span><a href="mailto:blazejfederowicz@gmail.com" className="hover:md:ms-4 ease-out duration-150 ">blazejfederowicz@gmail.com</a></p>
+                    <p className=" text-gray-700"><span className="font-bold">Email : </span><a href="mailto:blazejfederowicz@gmail.com" className="hover:md:ms-4 hover:md:text-blue-950 active:text-blue-950 ease-out duration-150 ">blazejfederowicz@gmail.com</a></p>
+                    </Reveal>
+                </div>
+                <div className=" border-b-1 border-b-gray-300 mt-3 pb-3">
+                    <Reveal>
+                    <p className=" text-gray-700"><span className="font-bold">Country : </span>Poland</p>
                     </Reveal>
                 </div>
                 <div className=" border-b-1 border-b-gray-300 mt-3 pb-3">

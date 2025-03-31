@@ -34,9 +34,9 @@ const NavbarComponent = ()=>{
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <div className="hidden sm:ml-6 sm:block me-4">
                 <div className="flex space-x-4">
-                <a href="#home" className="px-3 py-2 text-balance font-light duration-100 ease-in text-white hover:md:translate-y-1">Home</a>
-                <a href="#about" className="hover:md:translate-y-1 duration-100 ease-in px-3 py-2 text-balance font-light text-white">About</a>
-                <a href="#contact" className="hover:md:translate-y-1 duration-100 ease-in px-3 py-2 text-balance font-light text-white">Contact</a>
+                <a href="#home" className="px-3 py-2 text-balance font-light duration-100 ease-in text-white hover:md:translate-y-1 hover:md:font-normal active:font-normal">Home</a>
+                <a href="#about" className="hover:md:translate-y-1 duration-100 ease-in px-3 py-2 text-balance font-light text-white hover:md:font-normal active:font-normal">About</a>
+                <a href="#contact" className="hover:md:translate-y-1 duration-100 ease-in px-3 py-2 text-balance font-light text-white hover:md:font-normal active:font-normal">Contact</a>
                 </div>
             </div>
             <button type="button" className="relative rounded-full cursor-pointer p-1 text-gray-300 active:text-white hover:text-white duration-100 ease-in-out focus:outline-hidden ">
