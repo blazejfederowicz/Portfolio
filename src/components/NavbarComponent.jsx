@@ -96,6 +96,11 @@ const NavbarComponent = ()=>{
                     About
                   </Reveal>
                 </a>
+                <a href="#Projects" className="hover:md:translate-y-1 duration-100 ease-in px-3 py-2 text-balance font-light text-white hover:md:font-normal active:font-normal">
+                  <Reveal>
+                    Projects
+                  </Reveal>
+                </a>
                 <a href="#contact" className="hover:md:translate-y-1 duration-100 ease-in px-3 py-2 text-balance font-light text-white hover:md:font-normal active:font-normal">
                   <Reveal>
                     Contact
@@ -103,7 +108,7 @@ const NavbarComponent = ()=>{
                 </a>
                 </div>
             </div>
-            <div className="relative ml-3">
+            <div ref={popupRef} className="relative ml-3">
                 <div className="ms-5">
                     <button className="relative rounded-full cursor-pointer p-1 text-gray-300 active:text-white hover:text-white duration-100 ease-in-out focus:outline-hidden " onClick={() => setUserMenuOpen(!userMenuOpen)}>
                         <Reveal>
@@ -112,7 +117,7 @@ const NavbarComponent = ()=>{
                         </Reveal>
                     </button>
                 </div>
-                <div ref={popupRef} className={`transition-opacity duration-200 ease-in ${userMenuOpen?'opacity-100 pointer-events-auto':'opacity-0 pointer-events-none'} absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white pt-1 pb-2 ring-1 shadow-lg ring-black/5 focus:outline-hidden`}role="menu" aria-orientation="vertical" id="user-menu" aria-labelledby="user-menu-button" tabIndex="-1">
+                <div  className={`transition-opacity duration-200 ease-in ${userMenuOpen?'opacity-100 pointer-events-auto':'opacity-0 pointer-events-none'} absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white pt-1 pb-2 ring-1 shadow-lg ring-black/5 focus:outline-hidden`}role="menu" aria-orientation="vertical" id="user-menu" aria-labelledby="user-menu-button" tabIndex="-1">
                     <a href="https://github.com/blazejfederowicz" target="_blank" className="flex justify-between relative group mx-4 py-1 my-1 text-sm  text-gray-700 hover:text-blue-950 active:text-blue-900" role="menuitem" tabIndex="-1" id="user-menu-item-0">
                       <span className="absolute -z-10"><i className="bi bi-github"></i> Blazej</span>
                       <span className="group-hover:ms-16 group-active:ms-16 ms-4 me-2 duration-150 ease-in-out bg-white">
@@ -142,6 +147,11 @@ const NavbarComponent = ()=>{
           <a href="#about" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-white active:text-white">
             <Reveal>
               About
+            </Reveal>
+          </a>
+          <a href="#projects" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-white active:text-white">
+            <Reveal>
+              Projects
             </Reveal>
           </a>
           <a href="#contact" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:text-white active:text-white">
