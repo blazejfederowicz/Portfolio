@@ -5,7 +5,7 @@
 }
 
 .custom-container{
-  background: url(assets/bg.jpg);
+  background: url(/src/assets//bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
@@ -24,4 +24,15 @@
   background: -webkit-linear-gradient(0deg, rgba(249,250,251,1) 0%, rgba(255,255,255,1) 70%);
   background: linear-gradient(0deg, rgba(249,250,251,1) 0%, rgba(255,255,255,1) 70%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f9fafb",endColorstr="#ffffff",GradientType=1);
+}
+
+.text-animate {
+  animation: textBg 4s linear infinite;
+  background-size: 200% 100%;
+}
+
+@keyframes textBg {
+  0% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 50% 50%; }
 }

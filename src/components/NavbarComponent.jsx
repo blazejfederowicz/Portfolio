@@ -1,13 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const NavbarComponent = ()=>{
     const [menuOpen, setMenuOpen] = useState(false);
     const [userMenuOpen, setUserMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 50);
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return(<>
-    <nav className="bg-black/25 sm:bg-transparent sm:absolute top-0 inset-x-0 z-50">
+    <nav className={`fixed top-0 inset-x-0 z-[1000] duration-300 ${
+        isScrolled || menuOpen ? "bg-black/35 backdrop-blur-xs shadow-lg " : "bg-transparent "
+      } ${isScrolled?"py-4":"py-6"}`}>
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
+        <div className="relative flex items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <button
               type="button"
