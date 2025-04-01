@@ -37,7 +37,7 @@ const FeatureComponent = ({scroll})=>{
                 <div className="@container relative overflow-y-visible min-h-[30rem] w-full grow max-lg:mx-auto max-lg:max-w-sm">
                   <div className="absolute cursor-pointer h-[500px] duration-300 ease-in-out hover:md:-mt-6 active:-mt-6 inset-x-10 top-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl">
                     <a href="https://markdown-landing-page.vercel.app" target="_blank">
-                      <img className="size-full object-cover object-top" src="/src/assets/phone.jpg" alt="phone"/>
+                      <img className="size-full object-cover object-top" src={phone} alt="phone"/>
                     </a>
                   </div>
                 </div>
