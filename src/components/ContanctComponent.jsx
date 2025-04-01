@@ -1,7 +1,7 @@
 
 export default function ContactComponent() {
   return (
-    <section>
+    <section className="container mx-auto">
         <form className="max-w-[50em] mx-auto">
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base/7 font-semibold text-gray-900">Profile</h2>

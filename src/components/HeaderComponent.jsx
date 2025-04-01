@@ -30,7 +30,7 @@ const HeaderComponent = ()=>{
                     <div className="order-1 mt-4 lg:mt-0 lg:order-0 text-gray-100 flex h-full sm:justify-center items-center flex-col mb-10 sm:mb-8">
                         <div className="lg:w-full ">
                             <Reveal>
-                                <h1 className="xl:text-4xl md:text-3xl sm:text-2xl text-base bg-gradient-to-r from-purple-300 via-slate-500 to-blue-500 bg-clip-text tracking-tight text-transparent text-animate">Full-stack Dev</h1>
+                                <h1 className="xl:text-4xl md:text-3xl sm:text-2xl text-base bg-gradient-to-r from-purple-300 via-slate-500 to-blue-500 bg-clip-text tracking-tight text-transparent text-animate">Web Developer</h1>
                             </Reveal>
                             <Reveal>
                                 <h1 className="md:text-7xl xl:text-8xl sm:text-6xl text-4xl font-bold sm:mb-3 lg:mb-6 tracking-tighter">FEDEROWICZ</h1>
@@ -66,7 +66,11 @@ const HeaderComponent = ()=>{
                     </div>
                     <div className=" hidden sm:flex items-center justify-center lg:justify-end">
                         <Reveal>
-                            <div className="bg-[url(/src/assets/profile.jpg)] transition-shadow duration-200 ease-in hover:shadow-[-10px_20px_20px_rgba(249,116,22,0.3)] bg-cover rounded-2xl lg:rounded-full border-2 border-amber-600 bg-no-repea bg-[50%_20%] lg:bg-center w-[404px] md:w-[485px] h-[10em] md:h-[15em] lg:w-[18em] lg:h-[18em] xl:h-[25em] xl:w-[25em]">
+                            <div className="bg-[url(/src/assets/profile.jpg)] relative transition-shadow duration-200 ease-in hover:shadow-[-10px_20px_20px_rgba(249,116,22,0.3)] bg-cover rounded-2xl lg:rounded-full border-2 border-amber-600 bg-no-repea bg-[50%_20%] lg:bg-center w-[404px] md:w-[485px] h-[10em] md:h-[15em] lg:w-[18em] lg:h-[18em] xl:h-[25em] xl:w-[25em]">
+                                <div className=" xl:scale-100 sm:scale-75 md:scale-100 lg:scale-75 md:-translate-11 lg:-translate-y-5 xl:-translate-7 sm:-translate-11 text-xl -rotate-10 flex justify-center items-center absolute px-4 py-3 shadow-[0px_0px_5px_#c084fc] shadow-green-400 border-2 rounded-4xl border-purple-400 text-purple-300 ">
+                                    <div className="w-2 h-2 shadow-[0px_0px_5px_#c084fc] rounded-full bg-purple-400 me-2"> </div>
+                                    <span>Avalible</span>
+                                    </div>
                             </div>
                         </Reveal>
                     </div>

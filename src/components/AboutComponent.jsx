@@ -52,7 +52,7 @@ const AboutComponent = ()=>{
                     <h1 className="text-5xl md:text-6xl lg:text-7xl text-zinc-800 font-bold mb-10">About Me</h1>
                   </Reveal>
                   <Reveal>
-                     <p className="text-sm sm:text-base text-gray-600 lg:text-lg font-medium">I finished secondary school with IT specialist degree. I am pationate about building web applications that users can feel comfortable interacting with. I love playing guitar and to release stress I work out at the gym.</p>
+                     <p className="text-sm sm:text-base text-gray-600 lg:text-lg font-medium">I completed secondary school with a vocational qualification as an Information Technology Technician. I am passionate about building web applications that offer smooth and intuitive user experiences. Outside of coding, I enjoy playing guitar, and to unwind, I hit the gym.</p>
                   </Reveal>
                 </div>
               </div>
