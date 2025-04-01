@@ -1,8 +1,8 @@
 import { motion, useInView, useAnimation } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 
-export const Reveal = ({ children, width = "fit-content" }) => {
-  const [styles, setStyles] = useState('relative overflow-hidden w-fit')
+export const Reveal = ({ children, custom = "w-fit overflow-hidden" }) => {
+  const [styles, setStyles] = useState(`relative ${custom}`)
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); 
   const controls = useAnimation();

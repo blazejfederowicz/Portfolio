@@ -56,7 +56,7 @@ const AboutComponent = ()=>{
                     </div>
                   </Reveal>
                   <Reveal>
-                     <p className="text-sm sm:text-base text-gray-600 lg:text-lg font-medium">I completed secondary school with a vocational qualification as an Information Technology Technician. I am passionate about building web applications that offer smooth and intuitive user experiences. Outside of coding, I enjoy playing guitar, and to unwind, I hit the gym.</p>
+                     <p className="text-sm sm:text-base text-gray-600 lg:text-lg font-medium">I completed secondary school with a <span className="font-bold">vocational qualification</span> as an <span className="font-bold">Information Technology Technician</span>. I am <span className="font-bold">passionate</span> about building <span className="font-bold">web applications</span> that offer smooth and intuitive <span className="font-bold">user experiences</span>. Outside of coding, I enjoy playing guitar, and to unwind, I hit the gym.</p>
                   </Reveal>
                 </div>
               </div>

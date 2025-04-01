@@ -114,7 +114,7 @@ const NavbarComponent = ()=>{
                 </div>
             </div>
             <div ref={popupRef} className="relative ml-3">
-                <div className="ms-5">
+                <div className="ms-2">
                     <button className="relative rounded-full cursor-pointer p-1 text-gray-300 active:text-white hover:text-white duration-100 ease-in-out focus:outline-hidden " onClick={() => setUserMenuOpen(!userMenuOpen)}>
                         <Reveal>
                           <span className="sr-only">Open user menu</span>

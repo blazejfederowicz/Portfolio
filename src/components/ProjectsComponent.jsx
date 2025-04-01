@@ -32,8 +32,7 @@ const ProjectsComponent=()=>{
                             </div>
                         </Reveal>
                         <Reveal>
-                            <motion.p className="text-sm sm:text-base lg:text-lg font-medium" style={{color:descriptionColor}}>Front-End & UI Development: Proficient in HTML, CSS, and JavaScript, with expertise in styling using Tailwind CSS and Bootstrap. Experienced in building dynamic web applications using the React framework and have a foundational understanding of Vue.js. 
-                            Back-End Development: Skilled in Node.js, utilizing EJS as a templating engine. Also familiar with Laravel, allowing for flexible backend development across different ecosystems.</motion.p>
+                            <motion.p className="text-sm sm:text-base lg:text-lg font-medium" style={{color:descriptionColor}}>I have strong experience in <span className='font-bold'>Front-End</span> and <span className='font-bold'>UI Development,</span> with a solid understanding of <span className='font-bold'>web technologies</span> and <span className='font-bold'>frameworks</span>. I’m skilled in creating <span className='font-bold'>responsive</span> and <span className='font-bold'>dynamic</span> websites and applications. On the<span className='font-bold'> Back-End</span>, I have experience with server-side <span className='font-bold'>technologies</span> and frameworks, enabling me to build <span className='font-bold'>flexible</span> and <span className='font-bold'>efficient</span> web solutions.</motion.p>
                         </Reveal>
                     </div>
                 </div>
