@@ -15,16 +15,19 @@ const ExpirianceComponent = ()=>{
                                 <div className="rounded-lg border border-zinc-800/80 border-r-4 bg-indigo-900/15 text-gray-200 shadow-sm relative overflow-hidden">
                                     <div className="p-6">
                                         <div className="mb-2 flex flex-wrap gap-x1 justify-between items-start">
-                                            <h4 className="font-medium text-lg">Computer Technician Intern</h4>
-                                            <span className="text-sm text-indigo-100/60">May 2022 - June 2022</span>
+                                            <h4 className="font-medium text-base sm:text-lg">Computer Technician Intern</h4>
+                                            <span className="text-xs sm:text-sm text-indigo-100/60">May 2022 - June 2022</span>
                                         </div>
-                                        <p className="text-indigo-100/60 mb-4">Compus, Kościerzyna</p>
-                                        <ul className="space-y-2 relative list-disc ml-5 text-sm">
-                                            <div className="absolute top-3 -left-3.5 bottom-0 bg-indigo-100/60 w-[1px] z-10"></div>
-                                            <li className="opacity-80">Diagnosing and replacing damaged or malfunctioning LCD/LED panels in monitors.</li>
-                                            <li className="opacity-80">Installing, configuring, and troubleshooting printers, including both wired and wireless models.</li>
-                                            <li className="opacity-80">Servicing, Repair, and Operational Management of Computer Hardware and Peripherals</li>
-                                            <li className="opacity-80">Documentation & Reporting.</li>
+                                        <p className="text-indigo-100/60 mb-4 text-xs sm:text-sm">Compus, Kościerzyna</p>
+                                        <ul className="space-y-2 pl-5 text-xs sm:text-sm list-disc  ">
+                                            <li className="opacity-80">
+                                                Diagnosing and replacing damaged or malfunctioning LCD/LED panels in monitors.</li>
+                                            <li className="opacity-80">
+                                                Installing, configuring, and troubleshooting printers, including both wired and wireless models.</li>
+                                            <li className="opacity-80">
+                                                Servicing, Repair, and Operational Management of Computer Hardware and Peripherals</li>
+                                            <li className="opacity-80">
+                                                Documentation & Reporting.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -33,12 +36,11 @@ const ExpirianceComponent = ()=>{
                                 <div className="rounded-lg border border-r-4 border-indigo-950 bg-black text-gray-200 shadow-sm relative overflow-hidden group hover:border-indigo-500/50 transition-colors duration-300">
                                     <div className="p-6">
                                         <div className="mb-2 flex flex-wrap gap-x1 justify-between items-start">
-                                            <h4 className="font-medium text-lg">Game Dev Intern</h4>
-                                            <span className="text-sm text-indigo-100/60">Oct 2023 - Dec 2023</span>
+                                            <h4 className="font-medium text-base sm:text-lg">Game Dev Intern</h4>
+                                            <span className="text-xs sm:text-sm text-indigo-100/60">Oct 2023 - Dec 2023</span>
                                         </div>
-                                        <p className="text-indigo-100/60 mb-4">Art of Code</p>
-                                        <ul className="space-y-2 relative list-disc ml-5 text-sm">
-                                            <div className="absolute top-3 -left-3.5 bottom-0 bg-indigo-100/60 w-[1px]  z-10"></div>
+                                        <p className="text-indigo-100/60 mb-4 text-xs sm:text-sm">Art of Code</p>
+                                        <ul className="space-y-2 relative list-disc ml-5 text-xs sm:text-sm">
                                             <li className="opacity-80">Creating game mechanics, designing levels, implementing character controls, adding animations, and optimizing performance. </li>
                                             <li className="opacity-80">Developing realistic physics interactions using Godot’s built-in physics engine, with GDScript.</li>
                                             <li className="opacity-80">Crafting Graphic Design from Scratch</li>
@@ -57,10 +59,10 @@ const ExpirianceComponent = ()=>{
                             <div className="rounded-lg border border-zinc-800/80 border-r-4 bg-indigo-900/15 text-gray-200 shadow-sm relative overflow-hidden">
                                 <div className="p-6">
                                     <div className="mb-2 flex flex-wrap gap-x1 justify-between items-start">
-                                        <h4 className="font-medium text-lg">IT Technician</h4>
-                                        <span className="text-sm text-indigo-100/60">Sep 2019 - May 2024</span>
+                                        <h4 className="font-medium text-base sm:text-lg">IT Technician</h4>
+                                        <span className="text-xs sm:text-sm text-indigo-100/60">Sep 2019 - May 2024</span>
                                     </div>
-                                    <p className="text-indigo-100/60 ">PZS 2 in Kościerzyna</p>
+                                    <p className="text-indigo-100/60 text-xs sm:text-sm">PZS 2 in Kościerzyna</p>
                                 </div>
                             </div>
                         </Reveal>
@@ -68,12 +70,11 @@ const ExpirianceComponent = ()=>{
                             <div className="rounded-lg border border-r-4 border-indigo-950 bg-black text-gray-200 shadow-sm relative overflow-hidden group hover:border-indigo-500/50 transition-colors duration-300">
                             <div className="p-6">
                                 <div className="mb-2 flex flex-wrap gap-x1 justify-between items-start">
-                                    <h4 className="font-medium text-lg">Certifications</h4>
-                                    <span className="text-sm text-indigo-100/60">Aug 2023 - Oct 2023</span>
+                                    <h4 className="font-medium text-base sm:text-lg">Certifications</h4>
+                                    <span className="text-xs sm:text-sm text-indigo-100/60">Aug 2023 - Oct 2023</span>
                                 </div>
-                                <p className="text-indigo-100/60 mb-4">FreeCodeCamp.com</p>
-                                <ul className="space-y-2 relative list-disc ml-5 text-sm">
-                                    <div className="absolute top-3 -left-3.5 bottom-0 bg-indigo-100/60 w-[1px]  z-10"></div>
+                                <p className="text-indigo-100/60 mb-4 text-xs sm:text-sm">FreeCodeCamp.com</p>
+                                <ul className="space-y-2 relative list-disc ml-5 text-xs sm:text-sm">
                                     <li className="opacity-80 hover:opacity-100 active:opacity-100 transition-opacity">
                                         <a href="https://www.freecodecamp.org/certification/Fabiio/responsive-web-design" target="_blank" rel="noopener noreferrer" className="me-2">Responsive Web Design Certificate</a>
                                         <i className="bi bi-box-arrow-up-right"></i>
@@ -90,10 +91,10 @@ const ExpirianceComponent = ()=>{
                             <div className="rounded-lg border border-r-4 border-indigo-950 bg-black text-gray-200 shadow-sm relative overflow-hidden group hover:border-indigo-500/50 transition-colors duration-300">
                                 <div className="p-6">
                                     <div className="mb-2 flex flex-wrap gap-x1 justify-between items-start">
-                                        <h4 className="font-medium text-lg">Full Stack BootCamp</h4>
-                                        <span className="text-sm text-indigo-100/60">Feb 2025 - Current</span>
+                                        <h4 className="font-medium text-base sm:text-lg">Full Stack BootCamp</h4>
+                                        <span className="text-xs sm:text-sm text-indigo-100/60">Feb 2025 - Current</span>
                                     </div>
-                                    <p className="text-indigo-100/60">AppBrewery Web</p>
+                                    <p className="text-indigo-100/60 text-xs sm:text-sm">AppBrewery Web</p>
                                 </div>
                             </div>
                         </Reveal>
