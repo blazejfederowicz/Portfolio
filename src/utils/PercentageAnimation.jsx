@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 export default function PercentageAnimation({first, second, duration,rerender}){
     const [percentage, setPercentage] = useState(second)
-    const [target, setTarget] = useState(first)
+    const [target, setTarget] = useState(null)
     const intervalId = useRef(null);
     const hasMounted = useRef(false)
     let calcDuration = Math.max(duration/Math.abs(first-second),1)
@@ -10,6 +10,7 @@ export default function PercentageAnimation({first, second, duration,rerender}){
     useEffect(()=>{
         const handleProcentageAnim = (firstNum, secondNum) => {
             if (intervalId.current) clearInterval(intervalId.current);
+            setTarget(first)
           
             let min = Math.min(secondNum,firstNum)
             let max = Math.max(secondNum,firstNum)
