@@ -11,7 +11,7 @@ const FeatureComponent = ({scroll})=>{
 
     return(<>
     <section id="projects" className="mt-32">
-      <div className=" pb-10 md:pb-32">
+      <div className=" pb-32">
         <div className="mx-auto max-w-xl px-6 lg:max-w-5xl lg:px-8">
           <Reveal custom="overflow-hidden">
             <div className="lg:text-center space-y-2">
@@ -51,7 +51,7 @@ const FeatureComponent = ({scroll})=>{
                 <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
                   <motion.p className="mt-2 text-lg font-medium tracking-tight max-lg:text-center" style={{color:boldTextColor}}>Quote Generator</motion.p>
                   <motion.p className="mt-2 max-w-lg text-sm/6 max-lg:text-center" style={{color:textColor}}>A quote machine is a good example how to generate random quotes. Stack:&nbsp;
-                  <span className="bg-gradient-to-r from-purple-300 via-slate-500 to-blue-500 bg-clip-text text-sm tracking-tight text-transparent text-animate brightness-125"> React JavaScript CSS</span>
+                  <span className="bg-gradient-to-r from-purple-300 via-slate-500 to-blue-500 bg-clip-text text-sm tracking-tight text-transparent text-animate brightness-125"> React JavaScript CSS Node.Js</span>
                   </motion.p>
                 </div>
                 <div className="relative min-h-[30rem] w-full grow">

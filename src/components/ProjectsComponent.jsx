@@ -26,7 +26,7 @@ const ProjectsComponent=()=>{
                     <div className="max-w-[35em] w-full mb-10 md:mb-20">
                         <Reveal>
                             <div className="mb-10">
-                                <motion.p className="text-balance text-5xl  tracking-tight" style={{color:textColor}}><span className='font-bold'>Projects</span> | React, Vue, Node.js, Laravel</motion.p>
+                                <motion.p className="text-balance text-3xl sm:text-4xl md:text-5xl  tracking-tight" style={{color:textColor}}><span className='font-bold'>Projects</span> | React, Vue, Node.js, Laravel</motion.p>
                                 <div data-orientation="horizontal" role="none" className="shrink-0 h-[1px] w-full mt-4 max-w-[100px]  bg-blue-800/60"></div>
                                 <div data-orientation="horizontal" role="none" className="shrink-0 h-[1px] w-full mt-2 max-w-[50px] bg-blue-800/60"></div>
                             </div>

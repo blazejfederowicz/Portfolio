@@ -1,8 +1,8 @@
 import React,{ useEffect, useRef, useState } from "react";
 import {motion, useMotionValue} from 'motion/react';
 import image1 from '../assets/the_calm_corner.png'
-import image2 from '../assets/the_calm_corner.png'
-import image3 from '../assets/fireworks.jpg'
+import image2 from '../assets/library.png'
+import image3 from '../assets/url_shortner.png'
 import { Reveal } from "../utils/Reveal";
 
 const DRAG_BUFFER = 80
@@ -43,21 +43,21 @@ export const ImageSlider =()=>{
             href:'https://the-calm-corner.onrender.com/',
             title:"The Calm Corner",
             stack:"Bootstrap Node.Js Express.Js JavaScript EJS",
-            desc:"Showcase your creativity by creating and sharing blogs. Choose from a variety of designs, preview before publishing, and easily edit or delete your posts as needed."
+            desc:"A blogging platform that allows users to create and share posts. It offers various design options, a preview feature before publishing, and the ability to edit or delete posts as needed."
         },
         {
             img:image2,
-            href:'#',
-            title:'',
-            stack:'',
-            desc:""
+            href:'https://github.com/blazejfederowicz/ex.2_ONX_IT',
+            title:'Library',
+            stack:'Vue.Js Laravel PHP JavaScript MySQL Bootstrap',
+            desc:"A basic book library application demonstrating CRUD operations, powered by a Laravel backend."
         },
         {
             img:image3,
-            href:'#',
-            title:'',
-            stack:'',
-            desc:""
+            href:'https://github.com/blazejfederowicz/ex.1_ONX_IT',
+            title:'URL Shortener',
+            stack:'Vue.Js Laravel PHP JavaScript MySql Tailwind ',
+            desc:"Upon submitting a URL, the front end sends the data to the backend and receives a shortened URL in response."
         }
     ]
 
@@ -111,7 +111,7 @@ export const ImageSlider =()=>{
     return(
         <div ref={carouselRef} className=" w-full flex flex-col items-center relative overflow-hidden min-[1630px]:overflow-visible">
             <motion.div 
-                className="relative w-full h-[20em] md:h-[30em] cursor-grab active:cursor-grabbing flex items-start justify-start mb-10 md:mb-20"
+                className="relative w-full h-[20em] md:h-[30em] cursor-grab active:cursor-grabbing flex items-start justify-start sm:mb-10 md:mb-20"
                 drag="x"
                 dragConstraints={{left:0,right:0}}
                 onDragStart={handleDragStart}
@@ -132,7 +132,7 @@ export const ImageSlider =()=>{
                     key={i}
                     ref={i === positionIndexes?imageRef:null}
                     onClick={()=>handleClick(i)}
-                    style={{background:`url(${e.img})`,backgroundPosition:'center',backgroundSize:"cover"}}
+                    style={{background:`url(${e.img})`,backgroundPosition:windowSize<640?'50% 35%':'50% 0%',backgroundSize:"cover"}}
                     variants={windowSize>639&&variants}
                     initial="center"
                     animate={windowSize<640?{scale:0.90}:position[i]}
@@ -140,10 +140,12 @@ export const ImageSlider =()=>{
                     transition={{duration:0.5}}
                 >
                 <a 
-                    href={e.href} 
+                    href={e.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onMouseEnter={()=>setDelay(true)}
                     onMouseLeave={()=>setDelay(false)} 
-                    className={`w-full h-full overflow-hidden duration-500 ease-in-out bg-gradient-to-t rounded-xl from-transparent to-70% to-black scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 justify-center flex-col p-10 ${position[i]==='center' && !dragging?'flex':'hidden'}`}
+                    className={`w-full h-full overflow-hidden duration-500 ease-in-out bg-gradient-to-t rounded-xl from-transparent to-70% to-black scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 justify-center flex-col p-10 backdrop-blur-xs ${position[i]==='center' && !dragging?'flex':'hidden'}`}
                     >
                     <span className={`group-hover:text-white group-active:text-white text-transparent ${delay?'delay-0 duration-200':'delay-300 duration-500'}  font-bold mb-1 text-lg`}>{e.title}</span>
                     <span className={`group-hover:opacity-100 group-active:opacity-100 opacity-0 bg-gradient-to-r from-purple-300 via-slate-500 to-blue-500 bg-clip-text text-sm tracking-tight text-transparent mb-2 transition-opacity ${delay?'delay-0 duration-200':'delay-500 duration-500'}`}>{e.stack}</span>
@@ -154,7 +156,10 @@ export const ImageSlider =()=>{
            ))}
            </motion.div>
            <Reveal>
-           <div className="mx-auto flex gap-2 p-1">
+            {windowSize<640 &&(
+                <p className="mb-10 text-indigo-500 text-sm ">Hold to see the description</p>
+            )}
+           <div className="mx-auto w-fit flex gap-2 p-1">
             {
                 images.map((e,i)=>(
                     

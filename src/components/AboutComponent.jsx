@@ -63,7 +63,7 @@ const AboutComponent = ()=>{
             </div>
         </div>
     </section>
-    <section className="container px-6 xl:max-w-5xl lg:px-0 mt-[5em] sm:mt-[35em] mx-auto md:mt-20 min-h-[400px]">
+    <section className="container px-6 xl:max-w-5xl lg:px-0 mt-[5em] sm:mt-[35em] mx-auto md:mt-20 mb-10 md:mb-0 min-h-[400px]">
         <div className="grid md:grid-cols-2">
             <div className=" order-3 md:order-1">
                 <div className="flex justify-between content-center mb-5">
@@ -179,7 +179,7 @@ const AboutComponent = ()=>{
 
                 </div>
             </div>
-            <div className="flex flex-col ms-auto me-auto md:me-0 w-full sm:w-[20em] mt-0 mb-20 md:my-0 order-2 md:order-1">
+            <div className="flex flex-col ms-auto me-auto md:me-0 w-full text-sm sm:text-base sm:w-[20em] mt-0 mb-20 md:my-0 order-2 md:order-1">
                 <div className=" border-b-1 border-b-gray-300 pb-3">
                     <Reveal>
                     <p className=" text-gray-700"><span className="font-bold">Birthday :</span> 25th January 2004</p>

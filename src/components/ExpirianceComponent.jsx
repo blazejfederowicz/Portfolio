@@ -3,11 +3,9 @@ import { Reveal } from "../utils/Reveal";
 const ExpirianceComponent = ()=>{
     return(
         <>
-            <section id="expiriance" className="container mx-auto px-4 sm:px-6 lg:px-8 pb-10 md:pb-32">
-                
+            <section id="expiriance" className="container mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-32">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-lg lg:max-w-5xl mx-auto">
-                    <div className="space-y-6">
-                        
+                    <div className="space-y-6 mb-10 lg:mb-0">
                             <Reveal>
                                 <h2 className="text-3xl md:text-5xl lg:text-4xl text-gray-200"><span className="font-bold">Professional</span> Expiriance</h2>
                                 <div data-orientation="horizontal" role="none" className="shrink-0 h-[1px] w-full mt-4 max-w-[100px] bg-blue-300/30"></div>
