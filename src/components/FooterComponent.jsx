@@ -26,28 +26,28 @@ const FooterComponent = ()=>{
               © Błażej Federowicz Inc. All Rights Reserved {new Date().getFullYear()}
             </Reveal>
             </div>
-            <div className="text-xs text-gray-600 ms-2">
-              <a href="#home" className="me-2 inline-block cursor-pointer underline-offset-4 hover:underline active:underline">
+            <div className="text-xs flex flex-wrap gap-[1px] justify-end text-gray-600 ms-2">
+              <a href="#home" className="me-2  cursor-pointer underline-offset-4 hover:underline active:underline">
               <Reveal>
                 Home
               </Reveal>  
               </a>
-              <a href="#about" className="me-2 inline-block cursor-pointer underline-offset-4 hover:underline active:underline">
+              <a href="#about" className="me-2  cursor-pointer underline-offset-4 hover:underline active:underline">
                 <Reveal>
                   About
                 </Reveal>
               </a>
-              <a href="#projects" className="me-2 inline-block cursor-pointer underline-offset-4 hover:underline active:underline">
+              <a href="#projects" className="me-2  cursor-pointer underline-offset-4 hover:underline active:underline">
               <Reveal>
                 Projects
               </Reveal>
               </a>
-              <a href="#expiriance" className="me-2 inline-block cursor-pointer underline-offset-4 hover:underline active:underline">
+              <a href="#expiriance" className="me-2  cursor-pointer underline-offset-4 hover:underline active:underline">
               <Reveal>
                 Expertise
               </Reveal>
               </a>
-              <a href="#contact" className="cursor-pointer inline-block underline-offset-4 hover:underline active:underline">
+              <a href="#contact" className="cursor-pointer  underline-offset-4 hover:underline active:underline">
               <Reveal>
                 Contact
               </Reveal>

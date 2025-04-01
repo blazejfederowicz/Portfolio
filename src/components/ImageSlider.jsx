@@ -145,11 +145,11 @@ export const ImageSlider =()=>{
                     rel="noopener noreferrer"
                     onMouseEnter={()=>setDelay(true)}
                     onMouseLeave={()=>setDelay(false)} 
-                    className={`w-full h-full overflow-hidden duration-500 ease-in-out bg-gradient-to-t rounded-xl from-transparent to-70% to-black scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 justify-center flex-col p-10 backdrop-blur-xs ${position[i]==='center' && !dragging?'flex':'hidden'}`}
+                    className={`w-full h-full overflow-hidden duration-500 ease-in-out bg-gradient-to-t rounded-xl from-transparent to-70% to-black scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 justify-center flex-col p-5 md:p-10 backdrop-blur-xs ${position[i]==='center' && !dragging?'flex':'hidden'}`}
                     >
-                    <span className={`group-hover:text-white group-active:text-white text-transparent ${delay?'delay-0 duration-200':'delay-300 duration-500'}  font-bold mb-1 text-lg`}>{e.title}</span>
-                    <span className={`group-hover:opacity-100 group-active:opacity-100 opacity-0 bg-gradient-to-r from-purple-300 via-slate-500 to-blue-500 bg-clip-text text-sm tracking-tight text-transparent mb-2 transition-opacity ${delay?'delay-0 duration-200':'delay-500 duration-500'}`}>{e.stack}</span>
-                    <span className={`group-hover:text-blue-200 group-active:text-blue-200 text-transparent ${!delay?'delay-400 duration-500':'delay-0 duration-200'} text-base`}>{e.desc}</span>
+                    <span className={`group-hover:text-white group-active:text-white text-transparent ${delay?'delay-0 duration-200':'delay-300 duration-500'}  font-bold mb-1 text-base md:text-lg`}>{e.title}</span>
+                    <span className={`group-hover:opacity-100 group-active:opacity-100 opacity-0 bg-gradient-to-r from-purple-300 via-slate-500 to-blue-500 bg-clip-text text-xs md:text-sm tracking-tight text-transparent mb-2 transition-opacity ${delay?'delay-0 duration-200':'delay-500 duration-500'}`}>{e.stack}</span>
+                    <span className={`group-hover:text-blue-200 group-active:text-blue-200 text-transparent ${!delay?'delay-400 duration-500':'delay-0 duration-200'} text-sm md:text-base`}>{e.desc}</span>
                 </a>
                 <div className="pointer-events-none absolute inset-px rounded-xl ring-1 shadow-sm ring-black/5"></div>
                 </motion.div>

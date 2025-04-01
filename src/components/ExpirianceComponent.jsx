@@ -3,7 +3,7 @@ import { Reveal } from "../utils/Reveal";
 const ExpirianceComponent = ()=>{
     return(
         <>
-            <section id="expiriance" className="container mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-32">
+            <section id="expiriance" className="container mx-auto px-5 sm:px-6 lg:px-8 pb-20 md:pb-32">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-lg lg:max-w-5xl mx-auto">
                     <div className="space-y-6 mb-10 lg:mb-0">
                             <Reveal>
@@ -20,7 +20,7 @@ const ExpirianceComponent = ()=>{
                                         </div>
                                         <p className="text-indigo-100/60 mb-4">Compus, Kościerzyna</p>
                                         <ul className="space-y-2 relative list-disc ml-5 text-sm">
-                                            <div className="absolute top-5 scale-y-110 left-0 bottom-0 bg-indigo-100/60 w-[1px] -translate-x-[13.9px] z-10"></div>
+                                            <div className="absolute top-3 -left-3.5 bottom-0 bg-indigo-100/60 w-[1px] z-10"></div>
                                             <li className="opacity-80">Diagnosing and replacing damaged or malfunctioning LCD/LED panels in monitors.</li>
                                             <li className="opacity-80">Installing, configuring, and troubleshooting printers, including both wired and wireless models.</li>
                                             <li className="opacity-80">Servicing, Repair, and Operational Management of Computer Hardware and Peripherals</li>
@@ -38,7 +38,7 @@ const ExpirianceComponent = ()=>{
                                         </div>
                                         <p className="text-indigo-100/60 mb-4">Art of Code</p>
                                         <ul className="space-y-2 relative list-disc ml-5 text-sm">
-                                            <div className="absolute top-4 scale-y-110 left-0 bottom-0 bg-indigo-100/60 w-[1px] -translate-x-[13.9px] z-10"></div>
+                                            <div className="absolute top-3 -left-3.5 bottom-0 bg-indigo-100/60 w-[1px]  z-10"></div>
                                             <li className="opacity-80">Creating game mechanics, designing levels, implementing character controls, adding animations, and optimizing performance. </li>
                                             <li className="opacity-80">Developing realistic physics interactions using Godot’s built-in physics engine, with GDScript.</li>
                                             <li className="opacity-80">Crafting Graphic Design from Scratch</li>
@@ -73,7 +73,7 @@ const ExpirianceComponent = ()=>{
                                 </div>
                                 <p className="text-indigo-100/60 mb-4">FreeCodeCamp.com</p>
                                 <ul className="space-y-2 relative list-disc ml-5 text-sm">
-                                    <div className="absolute top-3 scale-y-110 left-0 bottom-0 bg-indigo-100/60 w-[1px] -translate-x-[13.9px] z-10"></div>
+                                    <div className="absolute top-3 -left-3.5 bottom-0 bg-indigo-100/60 w-[1px]  z-10"></div>
                                     <li className="opacity-80 hover:opacity-100 active:opacity-100 transition-opacity">
                                         <a href="https://www.freecodecamp.org/certification/Fabiio/responsive-web-design" target="_blank" rel="noopener noreferrer" className="me-2">Responsive Web Design Certificate</a>
                                         <i className="bi bi-box-arrow-up-right"></i>

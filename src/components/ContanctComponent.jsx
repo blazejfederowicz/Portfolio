@@ -90,7 +90,7 @@ export default function ContactComponent() {
   };
 
   return (
-    <section id="contact" className="container max-w-xl lg:max-w-5xl px-6 lg:px-8 mx-auto mb-20 mt-10 md:mt-0 md:mb-32">
+    <section id="contact" className="container max-w-xl lg:max-w-5xl px-5 sm:px-6 lg:px-8 mx-auto mb-20 mt-10 md:mt-0 md:mb-32">
       <Reveal custom="overflow-hidden">
         <div className="lg:text-center mb-16 space-y-2">
           <h2 className="text-3xl md:text-5xl text-gray-200"><span className="font-bold">Contact</span> Me</h2>
@@ -104,7 +104,7 @@ export default function ContactComponent() {
         <Reveal custom="overflow-hidden h-full">
           <div className="p-6 space-y-6">
             <h3 className="text-xl font-medium mb-4">Contact Information</h3>
-            <div className="space-y-4">
+            <div className="space-y-4 text-sm sm:text-base">
               <div className="flex items-start gap-3">
                 <div className="py-1 px-2 rounded-md bg-indigo-200/10 text-indigo-400 shrink-0 ">
                   <i className="bi bi-geo-alt"></i>
@@ -120,7 +120,7 @@ export default function ContactComponent() {
               </div>
                 <div>
                   <h4 className="font-medium">Email</h4>
-                  <a href="mailto:blazejfederowicz@gmail.com" className="text-white/40 hover:text-indigo-500 active:text-indigo-500 transition-colors">blazejfederowicz@gmail.com</a>
+                  <a href="mailto:blazejfederowicz@gmail.com" className="text-white/40 hover:text-indigo-500 active:text-indigo-500 transition-colors break-all">blazejfederowicz@gmail.com</a>
                 </div>
               </div>
             </div>
@@ -162,7 +162,7 @@ export default function ContactComponent() {
                   <textarea className="flex w-full rounded-md border px-3 py-2 text-sm ring-offset-background text-white/80 focus-visible:outline-none focus-visible:ring-1 ring-offset-indigo-800 ring-indigo-700/50  focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 min-h-[120px] bg-gray-800/20 border-zinc-800/80 mt-2" id="message" name="message" placeholder="Your message" onChange={(e)=>handleOnChange(e,setMessage)} value={message} style={{height: "21px"}}>
                   </textarea>
                 </div>
-                <button className="inline-flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap rounded-md text-sm font-medium ring-offset-indigo-900 ring-indigo-900/50 transition-colors focus-visible:outline-none focus-visible:ring-1  focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-indigo-950 hover:bg-indigo-900/70 h-10 px-4 py-2 w-full" type="submit" value="Send" disabled={isSubmitting}>
+                <button className="inline-flex overflow-hidden items-center justify-center gap-2 cursor-pointer whitespace-nowrap rounded-md text-sm font-medium ring-offset-indigo-900 ring-indigo-900/50 transition-colors focus-visible:outline-none focus-visible:ring-1  focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-indigo-950 hover:bg-indigo-900/70 h-10 px-4 py-2 w-full" type="submit" value="Send" disabled={isSubmitting}>
                 <span className="flex items-center me-1">Send Message</span>
                 {isSubmitting?
                 <svg className="spinner" viewBox="0 0 50 50">

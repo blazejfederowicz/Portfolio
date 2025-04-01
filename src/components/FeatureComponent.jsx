@@ -13,7 +13,7 @@ const FeatureComponent = ({scroll})=>{
     return(<>
     <section id="projects" className="mt-32">
       <div className=" pb-32">
-        <div className="mx-auto max-w-xl px-6 lg:max-w-5xl lg:px-8">
+        <div className="mx-auto max-w-xl px-5 lg:max-w-5xl lg:px-8">
           <Reveal custom="overflow-hidden">
             <div className="lg:text-center space-y-2">
               <motion.h2 className="text-3xl md:text-5xl" style={{color: boldTextColor}}><span className="font-bold">Additional</span> Work</motion.h2>
