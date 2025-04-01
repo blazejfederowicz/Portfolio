@@ -6,6 +6,7 @@ import AboutComponent from './components/AboutComponent'
 import ProjectsComponent from './components/ProjectsComponent'
 import ContactComponent from './components/ContanctComponent'
 import FooterComponent from './components/FooterComponent'
+import ExpirianceComponent from './components/ExpirianceComponent'
 
 function App() {
   const ref = useRef(null)
@@ -20,6 +21,7 @@ function App() {
         <AboutComponent/>
       </div>
       <ProjectsComponent/>
+      <ExpirianceComponent/>
       <ContactComponent/>
       <FooterComponent/>
     </>

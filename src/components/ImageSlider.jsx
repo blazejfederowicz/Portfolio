@@ -101,7 +101,7 @@ export const ImageSlider =()=>{
     },[windowSize, positionIndexes])
 
     const variants = {
-        center: {x:0,scale:1, zIndex:  1000, cursor:'', filter:'none'},
+        center: {x:0,scale:1, zIndex:  10, cursor:'', filter:'none'},
         right: {x:"98%",scale:0.9, zIndex: 0, cursor:'inherit',filter: "brightness(50%)"},
         right1: {x:"186%",scale:0.8, zIndex: 0, cursor:'inherit',filter: "brightness(30%)"},
         left1: {x:"-186%",scale:0.8, zIndex: 0, cursor:'inherit',filter: "brightness(30%)"},

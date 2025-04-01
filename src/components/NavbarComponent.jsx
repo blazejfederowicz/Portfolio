@@ -86,22 +86,27 @@ const NavbarComponent = ()=>{
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <div className="hidden sm:ml-6 sm:block me-4">
                 <div className="flex space-x-4">
-                <a href="#home" className="px-3 py-2 text-balance font-light duration-100 ease-in text-white hover:md:translate-y-1 hover:md:font-normal active:font-normal">
+                <a href="#home" className="px-0 py-2 text-balance font-extralight duration-100 ease-in text-white hover:md:translate-y-1 hover:md:font-normal active:font-normal">
                   <Reveal>
                     Home
                   </Reveal>
                   </a>
-                <a href="#about" className="hover:md:translate-y-1 duration-100 ease-in px-3 py-2 text-balance font-light text-white hover:md:font-normal active:font-normal">
+                <a href="#about" className="hover:md:translate-y-1 duration-100 ease-in px-0 py-2 text-balance font-extralight text-white hover:md:font-normal active:font-normal">
                   <Reveal>
                     About
                   </Reveal>
                 </a>
-                <a href="#projects" className="hover:md:translate-y-1 duration-100 ease-in px-3 py-2 text-balance font-light text-white hover:md:font-normal active:font-normal">
+                <a href="#projects" className="hover:md:translate-y-1 duration-100 ease-in px-0 py-2 text-balance font-extralight text-white hover:md:font-normal active:font-normal">
                   <Reveal>
                     Projects
                   </Reveal>
                 </a>
-                <a href="#contact" className="hover:md:translate-y-1 duration-100 ease-in px-3 py-2 text-balance font-light text-white hover:md:font-normal active:font-normal">
+                <a href="#expiriance" className="hover:md:translate-y-1 duration-100 ease-in px-0 py-2 text-balance font-extralight text-white hover:md:font-normal active:font-normal">
+                  <Reveal>
+                    Expertise
+                  </Reveal>
+                </a>
+                <a href="#contact" className="hover:md:translate-y-1 duration-100 ease-in px-0 py-2 text-balance font-extralight text-white hover:md:font-normal active:font-normal">
                   <Reveal>
                     Contact
                   </Reveal>
@@ -152,6 +157,11 @@ const NavbarComponent = ()=>{
           <a href="#projects" className="block rounded-md px-3 py-2 text-base font-medium text-gray-100 hover:text-white active:text-white">
             <Reveal>
               Projects
+            </Reveal>
+          </a>
+          <a href="#expiriance" className="block rounded-md px-3 py-2 text-base font-medium text-gray-100 hover:text-white active:text-white">
+            <Reveal>
+              Expertise
             </Reveal>
           </a>
           <a href="#contact" className="block rounded-md px-3 py-2 text-base font-medium text-gray-100 hover:text-white active:text-white">

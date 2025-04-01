@@ -89,14 +89,14 @@ export default function ContactComponent() {
   };
 
   return (
-    <section id="contact" className="container mx-auto mb-20 mt-10 md:mt-0 md:mb-32">
-      <div className="text-center mb-12 space-y-2">
-        <h2 className="text-3xl md:text-5xl font-bold text-gray-200">Contact Me</h2>
-        <div data-orientation="horizontal" role="none" className="shrink-0 h-[1px] w-full mt-4 max-w-[100px] mx-auto bg-blue-300/30"></div>
-        <div data-orientation="horizontal" role="none" className="shrink-0 h-[1px] w-full mt-2 max-w-[50px] mx-auto bg-blue-300/30"></div>
+    <section id="contact" className="container max-w-xl lg:max-w-5xl px-6 lg:px-8 mx-auto mb-20 mt-10 md:mt-0 md:mb-32">
+      <div className="lg:text-center mb-16 space-y-2">
+        <h2 className="text-3xl md:text-5xl text-gray-200"><span className="font-bold">Contact</span> Me</h2>
+        <div data-orientation="horizontal" role="none" className="shrink-0 h-[1px] w-full mt-4 max-w-[100px] lg:mx-auto bg-blue-300/30"></div>
+        <div data-orientation="horizontal" role="none" className="shrink-0 h-[1px] w-full mt-2 max-w-[50px] lg:mx-auto bg-blue-300/30"></div>
 
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full mx-auto">
         <div className="rounded-lg border text-white/80 shadow-sm bg-indigo-900/15 backdrop-blur-sm border-zinc-800/80">
           <div className="p-6 space-y-6">
             <h3 className="text-xl font-medium mb-4">Contact Information</h3>
@@ -107,7 +107,7 @@ export default function ContactComponent() {
                 </div>
                 <div>
                   <h4 className="font-medium">Location</h4>
-                  <p className="text-white/40">Pomorskie, Polska</p>
+                  <p className="text-white/40">Pomorskie, Poland</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -160,7 +160,7 @@ export default function ContactComponent() {
               <span className="flex items-center me-1">Send Message</span>
               {isSubmitting?
               <svg className="spinner" viewBox="0 0 50 50">
-                <circle className="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                <circle className="path" cx="25" cy="25" r="20" fill="none" strokeWidth="5"></circle>
               </svg>:
                 <i className="bi bi-send-fill"></i>
               }
