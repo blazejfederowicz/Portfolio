@@ -5,7 +5,7 @@ import image2 from '../assets/library.png'
 import image3 from '../assets/url_shortner.png'
 import { Reveal } from "../utils/Reveal";
 
-const DRAG_BUFFER = 80
+const DRAG_BUFFER = 50
 
 export const ImageSlider =()=>{
     const [positionIndexes, setPositionIndexes]= useState(0);
