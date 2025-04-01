@@ -96,7 +96,7 @@ const NavbarComponent = ()=>{
                     About
                   </Reveal>
                 </a>
-                <a href="#Projects" className="hover:md:translate-y-1 duration-100 ease-in px-3 py-2 text-balance font-light text-white hover:md:font-normal active:font-normal">
+                <a href="#projects" className="hover:md:translate-y-1 duration-100 ease-in px-3 py-2 text-balance font-light text-white hover:md:font-normal active:font-normal">
                   <Reveal>
                     Projects
                   </Reveal>
@@ -128,7 +128,7 @@ const NavbarComponent = ()=>{
                     <a href="https://www.linkedin.com/in/błażej-federowicz-6a25b0320/" target="_blank" className="flex relative justify-between group mx-4 py-1 text-sm text-gray-700 hover:text-blue-950 active:text-blue-900" role="menuitem" tabIndex="-1" id="user-menu-item-1">
                       <span className="absolute -z-10"><i className="bi bi-linkedin"></i> Blazej</span>
                       <span className="group-hover:ms-16 group-active:ms-16 duration-150 ease-in-out ms-4 me-2 bg-white">
-                        <span className="opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity delay-75 duration-300 ease-out">/</span> Linkdin
+                        <span className="opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity delay-75 duration-300 ease-out">/</span> Linkedin
                       </span>
                       <i className="bi bi-box-arrow-up-right"></i>
                     </a>

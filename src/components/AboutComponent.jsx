@@ -49,7 +49,11 @@ const AboutComponent = ()=>{
               <div className="w-full mt-[2em] sm:mt-0">
                 <div className="wraper max-w-[30em] px-5 md:ms-auto md:me-auto lg:me-10 ">
                   <Reveal>
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl text-zinc-800 font-bold mb-10">About Me</h1>
+                    <div className="mb-10">
+                        <h1 className="text-5xl md:text-6xl lg:text-7xl text-zinc-800 font-bold">About Me</h1>
+                        <div data-orientation="horizontal" role="none" className="shrink-0 h-[1px] w-full mt-4 max-w-[100px]  bg-blue-800/60"></div>
+                        <div data-orientation="horizontal" role="none" className="shrink-0 h-[1px] w-full mt-2 max-w-[50px] bg-blue-800/60"></div>
+                    </div>
                   </Reveal>
                   <Reveal>
                      <p className="text-sm sm:text-base text-gray-600 lg:text-lg font-medium">I completed secondary school with a vocational qualification as an Information Technology Technician. I am passionate about building web applications that offer smooth and intuitive user experiences. Outside of coding, I enjoy playing guitar, and to unwind, I hit the gym.</p>
@@ -198,7 +202,7 @@ const AboutComponent = ()=>{
                 </div>
                 <div className=" border-b-1 border-b-gray-300 mt-3 pb-3">
                     <Reveal>
-                    <p className=" text-gray-700"><span className="font-bold">Country : </span>Poland</p>
+                    <p className=" text-gray-700"><span className="font-bold">Location : </span>Poland</p>
                     </Reveal>
                 </div>
                 <div className=" border-b-1 border-b-gray-300 mt-3 pb-3">

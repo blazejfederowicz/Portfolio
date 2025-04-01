@@ -25,7 +25,11 @@ const ProjectsComponent=()=>{
                 <div className="w-full flex items-start justify-center flex-col z-50 pe-10 relative">
                     <div className="max-w-[35em] w-full mb-10 md:mb-20">
                         <Reveal>
-                            <motion.p className="text-balance text-4xl font-semibold mb-10" style={{color:textColor}}>Fullstack | React, Vue, Node.js, Laravel</motion.p>
+                            <div className="mb-10">
+                                <motion.p className="text-balance text-4xl font-semibold" style={{color:textColor}}>Fullstack | React, Vue, Node.js, Laravel</motion.p>
+                                <div data-orientation="horizontal" role="none" className="shrink-0 h-[1px] w-full mt-4 max-w-[100px]  bg-blue-800/60"></div>
+                                <div data-orientation="horizontal" role="none" className="shrink-0 h-[1px] w-full mt-2 max-w-[50px] bg-blue-800/60"></div>
+                            </div>
                         </Reveal>
                         <Reveal>
                             <motion.p className="text-sm sm:text-base lg:text-lg font-medium" style={{color:descriptionColor}}>Front-End & UI Development: Proficient in HTML, CSS, and JavaScript, with expertise in styling using Tailwind CSS and Bootstrap. Experienced in building dynamic web applications using the React framework and have a foundational understanding of Vue.js. 

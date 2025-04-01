@@ -1,51 +1,175 @@
+import React, { useEffect, useState } from "react";
+import emailjs, { sendForm } from '@emailjs/browser';
+import { time } from "motion";
 
 export default function ContactComponent() {
-  return (
-    <section className="container mx-auto">
-        <form className="max-w-[50em] mx-auto">
-        <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base/7 font-semibold text-gray-900">Profile</h2>
-          <p className="mt-1 text-sm/6 text-gray-600">
-            This information will be displayed publicly so be careful what you share.
-          </p>
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [title, setTitle] = useState("")
+  const [error, setError] = useState(false)
+  const [stateMessage, setStateMessage] = useState(null);
 
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-            <div className="sm:col-span-4">
-              <label htmlFor="username" className="block text-sm/6 font-medium text-gray-900">
-                Username
-              </label>
-              <div className="mt-2">
-                <div className="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
-                  <div className="shrink-0 text-base text-gray-500 select-none sm:text-sm/6">workcation.com/</div>
-                  <input
-                    id="username"
-                    name="username"
-                    type="text"
-                    placeholder="janesmith"
-                    className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                  />
+  const validateForm = () => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!name.trim()) {
+      setError(true);
+      return 'Name is required';
+    }
+    if (!email.trim() || !emailRegex.test(email)) {
+      setError(true);
+      return 'Valid email is required';
+    }
+    if (!title.trim()) {
+      setError(true);
+      return 'Title is required';
+    }
+    if (!message.trim()) {
+      setError(true);
+      return 'Message is required';
+    }
+    return null;
+  };
+  
+  const handleOnChange = (e, method) => {
+    return method(e.target.value)
+  }
+
+  useEffect(()=>{
+    if(!validateForm()){
+      setStateMessage(null)
+    }
+  },[name, email, message, title])
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const validationError = validateForm();
+    if (validationError) {
+      setStateMessage(validationError);
+      setIsSubmitting(false);
+      return;
+    }
+
+    const currentTime = new Date().toISOString();
+
+    emailjs.sendForm(
+      import.meta.env.VITE_SERVICE_ID,
+      import.meta.env.VITE_TEMPLATE_ID, e.target,
+      import.meta.env.VITE_PUBLIC_KEY,
+      {
+        time: currentTime,
+      }
+    )
+      .then(
+        (result) => {
+          setError(false);
+          setStateMessage('Message sent!');
+          setIsSubmitting(false);
+          setTimeout(() => {
+            setStateMessage(null);
+            setName('');
+            setEmail('');
+            setTitle('');
+            setMessage('');
+          }, 5000);
+        },
+        (error) => {
+          setError(true);
+          setStateMessage('Something went wrong, please try again later');
+          setIsSubmitting(false);
+          setTimeout(() => {
+            setStateMessage(null);
+          }, 5000);
+        }
+      );
+    
+  };
+
+  return (
+    <section id="contact" className="container mx-auto mb-20 mt-10 md:mt-0 md:mb-32">
+      <div className="text-center mb-12 space-y-2">
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-200">Contact Me</h2>
+        <div data-orientation="horizontal" role="none" className="shrink-0 h-[1px] w-full mt-4 max-w-[100px] mx-auto bg-blue-300/30"></div>
+        <div data-orientation="horizontal" role="none" className="shrink-0 h-[1px] w-full mt-2 max-w-[50px] mx-auto bg-blue-300/30"></div>
+
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
+        <div className="rounded-lg border text-white/80 shadow-sm bg-indigo-900/15 backdrop-blur-sm border-zinc-800/80">
+          <div className="p-6 space-y-6">
+            <h3 className="text-xl font-medium mb-4">Contact Information</h3>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="py-1 px-2 rounded-md bg-indigo-200/10 text-indigo-400 shrink-0 ">
+                  <i className="bi bi-geo-alt"></i>
+                </div>
+                <div>
+                  <h4 className="font-medium">Location</h4>
+                  <p className="text-white/40">Pomorskie, Polska</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+              <div className="py-1 px-2 rounded-md bg-indigo-200/10 text-indigo-400 shrink-0">
+                <i className="bi bi-envelope"></i>
+              </div>
+                <div>
+                  <h4 className="font-medium">Email</h4>
+                  <a href="mailto:blazejfederowicz@gmail.com" className="text-white/40 hover:text-indigo-500 active:text-indigo-500 transition-colors">blazejfederowicz@gmail.com</a>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="col-span-full">
-              <label htmlFor="about" className="block text-sm/6 font-medium text-gray-900">
-                About
-              </label>
-              <div className="mt-2">
-                <textarea
-                  id="about"
-                  name="about"
-                  rows={3}
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                  defaultValue={''}
-                />
-              </div>
-              <p className="mt-3 text-sm/6 text-gray-600">Write a few sentences about yourself.</p>
+            <div className="pt-4 border-t border-border/50">
+              <h4 className="font-medium mb-3">Social Profiles</h4>
+              <div className="flex gap-3">
+                  <a href="https://github.com/blazejfederowicz" target="_blank" rel="noopener noreferrer" className="py-2 px-3 rounded-full bg-indigo-900/15 hover:bg-indigo-900/30 text-white/40 hover:text-indigo-300 active:text-indigo-300 transition-colors">
+                    <i className="bi bi-github"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/błażej-federowicz-6a25b0320/" target="_blank" rel="noopener noreferrer" className="py-2 px-3 rounded-full bg-indigo-900/15 hover:bg-indigo-900/30 text-white/40 hover:text-indigo-300 active:text-indigo-300 transition-colors">
+                    <i className="bi bi-linkedin"></i>
+                  </a>
+                  <a href="mailto:blazejfederowicz@gmail.com:" target="_blank" rel="noopener noreferrer" className="py-2 px-3 rounded-full bg-indigo-900/15 hover:bg-indigo-900/30 text-white/40 hover:text-indigo-300 active:text-indigo-300 transition-colors">
+                    <i className="bi bi-envelope"></i>
+                  </a>
+                </div>
             </div>
+          </div>
         </div>
-        </form>
+        <div className="rounded-lg border text-white/80 shadow-sm bg-indigo-900/15 backdrop-blur-sm border-zinc-800/80">
+          <div className="p-6"><h3 className="text-xl font-medium mb-4">Send Me a Message</h3>
+            <form onSubmit={sendEmail} className="space-y-4">
+              <div className="space-y-2">
+                <label className="text-sm font-medium leading-none " htmlFor="name">Name</label>
+                <input className="flex h-10 w-full rounded-md border ring-offset-indigo-800 ring-indigo-700/50 px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-white text-white/80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-950 focus-visible:ring-offset-2  md:text-sm bg-gray-800/20 border-zinc-800/80 mt-2" id="name" name="name" placeholder="Your name" onChange={(e)=>handleOnChange(e,setName)} value={name}/>
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" htmlFor="email">Email</label>
+                <input type="text" className="flex h-10 w-full rounded-md border px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium ring-offset-indigo-800 ring-indigo-700/50 file:text-white text-white/80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm bg-gray-800/20 border-zinc-800/80 mt-2" id="email" name="email" placeholder="your.email@example.com" onChange={(e)=>handleOnChange(e,setEmail)} value={email}/>
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" htmlFor="title">Title</label>
+                <input type="text" className="flex h-10 w-full rounded-md border px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium ring-offset-indigo-800 ring-indigo-700/50 file:text-white text-white/80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm bg-gray-800/20 border-zinc-800/80 mt-2" id="title" name="title" placeholder="Your title" onChange={(e)=>handleOnChange(e,setTitle)} value={title}/>
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" htmlFor="message">Message</label>
+                <textarea className="flex w-full rounded-md border px-3 py-2 text-sm ring-offset-background text-white/80 focus-visible:outline-none focus-visible:ring-1 ring-offset-indigo-800 ring-indigo-700/50  focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 min-h-[120px] bg-gray-800/20 border-zinc-800/80 mt-2" id="message" name="message" placeholder="Your message" onChange={(e)=>handleOnChange(e,setMessage)} value={message} style={{height: "21px"}}>
+                </textarea>
+              </div>
+              <button className="inline-flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap rounded-md text-sm font-medium ring-offset-indigo-900 ring-indigo-900/50 transition-colors focus-visible:outline-none focus-visible:ring-1  focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-indigo-950 hover:bg-indigo-900/70 h-10 px-4 py-2 w-full" type="submit" value="Send" disabled={isSubmitting}>
+              <span className="flex items-center me-1">Send Message</span>
+              {isSubmitting?
+              <svg className="spinner" viewBox="0 0 50 50">
+                <circle className="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+              </svg>:
+                <i className="bi bi-send-fill"></i>
+              }
+              </button>
+              {stateMessage && <p className={`text-sm -mt-3 ${error?' text-red-500':'text-green-400'}`}>{stateMessage}</p>}
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }

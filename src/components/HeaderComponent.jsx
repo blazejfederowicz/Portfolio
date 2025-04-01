@@ -45,29 +45,35 @@ const HeaderComponent = ()=>{
                                     animate={{
                                         filter: isBlurred? "blur(30px)": "blur(0px)"
                                     }}
-                                >
-                                    <button 
-                                    ref={buttonRef} 
-                                    onClick={handleDonwload} 
-                                    className="md:p-4 sm:p-3 p-2 text-xs sm:text-base  leading-none cursor-pointer relative box-border bg-gradient-to-r from-purple-300 via-slate-500 to-blue-500 size-fit text-animate rounded-4xl transition-all duration-300 hover:brightness-125 active:brightness-125 ease-in-out">
-                                        <span>Download resume</span>
-                                        <div className="pointer-events-none absolute inset-px duration-150  rounded-4xl ring-1 shadow-sm ring-white/20"></div>
-                                    </button>
+                                >   
+                                    <Reveal>
+                                        <button 
+                                        ref={buttonRef} 
+                                        onClick={handleDonwload} 
+                                        className="md:p-4 sm:p-3 p-2 text-xs sm:text-base  leading-none cursor-pointer relative box-border bg-gradient-to-r from-purple-300 via-slate-500 to-blue-500 size-fit text-animate rounded-4xl transition-all duration-300 hover:brightness-125 active:brightness-125 ease-in-out">
+                                            <span>Download resume</span>
+                                            <div className="pointer-events-none absolute inset-px duration-150  rounded-4xl ring-1 shadow-sm ring-white/20"></div>
+                                        </button>
+                                    </Reveal>
                                 </motion.div>
+                                <div className="inline-block h-full">
+                                    <Reveal>
+                                        <a href="#projects" className="relative group ms-1 sm:ms-2 md:p-4 sm:p-3 p-2 text-xs sm:text-base text-gray-100/70 transition-colors duration-150 ease-in-out hover:text-gray-100 active:text-gray-100 bg-black/50 rounded-4xl">
+                                            <span className="me-2">View projects</span>
+                                            <i className="bi bi-box-arrow-up-right"></i>
+                                            <div className="pointer-events-none absolute inset-px duration-150 ease-in-out rounded-4xl ring-1 group-hover:ring-white/40 group-active:ring-white/40 shadow-sm ring-white/20"></div>
+                                        </a>
+                                    </Reveal>
+                                </div>
                                 <a ref={downloadLink} href="/src/assets/en-CV-Blazej-Federowicz.pdf" download="CV_Blazej_Federowicz.pdf" className="hidden"></a>
-                                <a href="#projects" className="relative group ms-1 sm:ms-2 md:p-4 sm:p-3 p-2 text-xs sm:text-base text-gray-100/70 transition-colors duration-150 ease-in-out hover:text-gray-100 active:text-gray-100 bg-black/50 rounded-4xl">
-                                    <span className="me-2">View projects</span>
-                                    <i className="bi bi-box-arrow-up-right"></i>
-                                    <div className="pointer-events-none absolute inset-px duration-150 ease-in-out rounded-4xl ring-1 group-hover:ring-white/40 group-active:ring-white/40 shadow-sm ring-white/20"></div>
-                                </a>
                             </div>
                         </div>
                         
                     </div>
                     <div className=" hidden sm:flex items-center justify-center lg:justify-end">
                         <Reveal>
-                            <div className="bg-[url(/src/assets/profile.jpg)] relative transition-shadow duration-200 ease-in hover:shadow-[-10px_20px_20px_rgba(249,116,22,0.3)] bg-cover rounded-2xl lg:rounded-full border-2 border-amber-600 bg-no-repea bg-[50%_20%] lg:bg-center w-[404px] md:w-[485px] h-[10em] md:h-[15em] lg:w-[18em] lg:h-[18em] xl:h-[25em] xl:w-[25em]">
-                                <div className=" xl:scale-100 sm:scale-75 md:scale-100 lg:scale-75 md:-translate-11 lg:-translate-y-5 xl:-translate-7 sm:-translate-11 text-xl -rotate-10 flex justify-center items-center absolute px-4 py-3 shadow-[0px_0px_5px_#c084fc] shadow-green-400 border-2 rounded-4xl border-purple-400 text-purple-300 ">
+                            <div className="bg-[url(/src/assets/profile.jpg)] relative transition-shadow duration-200 ease-in hover:shadow-[-10px_20px_20px_rgba(249,116,22,0.3)] bg-cover rounded-2xl lg:rounded-full border-2 border-amber-600 bg-no-repea bg-[50%_20%] overflow-visible lg:bg-center w-[404px] md:w-[485px] h-[10em] md:h-[15em] lg:w-[18em] lg:h-[18em] xl:h-[25em] xl:w-[25em]">
+                                <div className=" xl:scale-100 lg:scale-75 lg:-translate-y-5 xl:-translate-7 lg:-translate-11 text-xl -rotate-10 hidden lg:flex justify-center items-center absolute px-4 py-3 shadow-[0px_0px_5px_#c084fc] shadow-green-400 border-2 rounded-4xl border-purple-400 text-purple-300 ">
                                     <div className="w-2 h-2 shadow-[0px_0px_5px_#c084fc] rounded-full bg-purple-400 me-2"> </div>
                                     <span>Avalible</span>
                                     </div>

@@ -3,7 +3,6 @@ import {motion, useMotionValue} from 'motion/react';
 import image1 from '../assets/the_calm_corner.png'
 import image2 from '../assets/the_calm_corner.png'
 import image3 from '../assets/fireworks.jpg'
-import { delay } from "motion";
 import { Reveal } from "../utils/Reveal";
 
 const DRAG_BUFFER = 80
@@ -137,12 +136,15 @@ export const ImageSlider =()=>{
                     variants={windowSize>639&&variants}
                     initial="center"
                     animate={windowSize<640?{scale:0.90}:position[i]}
-                    onMouseEnter={()=>setDelay(true)}
-                    onMouseLeave={()=>setDelay(false)}
                     className="rounded-xl group sm:absolute aspect-video sm:aspect-auto shrink-0 sm:shrink w-full sm:w-[15em] md:w-[20em] h-[20em] md:h-[30em] active:cursor-grabbing"
                     transition={{duration:0.5}}
                 >
-                <a href={e.href} className={`w-full h-full overflow-hidden duration-500 ease-in-out bg-gradient-to-t rounded-xl from-transparent to-70% to-black scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 justify-center flex-col p-10 ${position[i]==='center' && !dragging?'flex':'hidden'}`}>
+                <a 
+                    href={e.href} 
+                    onMouseEnter={()=>setDelay(true)}
+                    onMouseLeave={()=>setDelay(false)} 
+                    className={`w-full h-full overflow-hidden duration-500 ease-in-out bg-gradient-to-t rounded-xl from-transparent to-70% to-black scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 justify-center flex-col p-10 ${position[i]==='center' && !dragging?'flex':'hidden'}`}
+                    >
                     <span className={`group-hover:text-white group-active:text-white text-transparent ${delay?'delay-0 duration-200':'delay-300 duration-500'}  font-bold mb-1 text-lg`}>{e.title}</span>
                     <span className={`group-hover:opacity-100 group-active:opacity-100 opacity-0 bg-gradient-to-r from-purple-300 via-slate-500 to-blue-500 bg-clip-text text-sm tracking-tight text-transparent mb-2 transition-opacity ${delay?'delay-0 duration-200':'delay-500 duration-500'}`}>{e.stack}</span>
                     <span className={`group-hover:text-blue-200 group-active:text-blue-200 text-transparent ${!delay?'delay-400 duration-500':'delay-0 duration-200'} text-base`}>{e.desc}</span>
