@@ -1,4 +1,6 @@
 import NavbarComponent from "./NavbarComponent"
+import wave from '../assets/wave.svg';
+import pdf from '../assets/en-CV-Blazej-Federowicz.pdf'
 import {motion} from 'motion/react'
 import { Reveal } from "../utils/Reveal"
 import { useRef, useState } from "react"
@@ -65,7 +67,7 @@ const HeaderComponent = ()=>{
                                         </a>
                                     </Reveal>
                                 </div>
-                                <a ref={downloadLink} href="/src/assets/en-CV-Blazej-Federowicz.pdf" download="CV_Blazej_Federowicz.pdf" className="hidden"></a>
+                                <a ref={downloadLink} href={pdf} download="CV_Blazej_Federowicz.pdf" className="hidden"></a>
                             </div>
                         </div>
                         
@@ -85,7 +87,7 @@ const HeaderComponent = ()=>{
                     
                 </div>
              </div>
-             <img src="src\assets\wave.svg" className="block w-full -mb-1 "/>
+             <img src={wave} className="block w-full -mb-1 "/>
         </div>
     </section>
     </>)

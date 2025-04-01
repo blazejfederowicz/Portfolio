@@ -1,4 +1,9 @@
 import { useRef, useState, useEffect } from "react"
+import guitar from '../assets/guitar.jpg';
+import fireworks from '../assets/fireworks.jpg';
+import laptop from '../assets/laptop.jpg';
+import man from '../assets/man.jpg';
+import plane from '../assets/plane.jpg'
 import PercentageAnimation from "../utils/PercentageAnimation";
 import { Reveal } from "../utils/Reveal";
 
@@ -25,23 +30,23 @@ const AboutComponent = ()=>{
                 <div className="grid grid-cols-3 w-[500px] gap-10 grid-rows-1 mt-10 sm:mt-0 lg:ms-5 px-5 justify-self-end md:justify-self-start">
                   <div className="lg:pt-64 lg:order-none sm:pt-64 pt-32 sm:order-none md:order-1 md:pt-32">
                   <Reveal>
-                    <img src="src/assets/guitar.jpg" className="rounded-xl transition-transform duration-200 ease-in-out hover:md:scale-110" alt="guitar"/>
+                    <img src={guitar} className="rounded-xl transition-transform duration-200 ease-in-out hover:md:scale-110" alt="guitar"/>
                   </Reveal>
                   </div>
                   <div className="sm:pt-32 md:pb-3">
                     <Reveal>
-                        <img src="src/assets/laptop.jpg" className="mb-[2.5em] rounded-xl transition-transform duration-200 ease-in-out hover:md:scale-110" alt="laptop"/>
+                        <img src={laptop} className="mb-[2.5em] rounded-xl transition-transform duration-200 ease-in-out hover:md:scale-110" alt="laptop"/>
                     </Reveal>
                     <Reveal>
-                        <img src="src/assets/plane.jpg" className="rounded-xl transition-transform duration-200 ease-in-out hover:md:scale-110" alt="plane"/>
+                        <img src={plane} className="rounded-xl transition-transform duration-200 ease-in-out hover:md:scale-110" alt="plane"/>
                     </Reveal>
                   </div>
                   <div className="pt-32 sm:pt-0 md:pt-3">
                   <Reveal>
-                    <img src="src/assets/man.jpg" className="mb-[2.5em] rounded-xl transition-transform duration-200 ease-in-out hover:md:scale-110" alt="man"/>
+                    <img src={man} className="mb-[2.5em] rounded-xl transition-transform duration-200 ease-in-out hover:md:scale-110" alt="man"/>
                   </Reveal>
                   <Reveal>
-                    <img src="src/assets/fireworks.jpg" className="rounded-xl transition-transform duration-200 ease-in-out hover:md:scale-110" alt="fireworks"/>
+                    <img src={fireworks}className="rounded-xl transition-transform duration-200 ease-in-out hover:md:scale-110" alt="fireworks"/>
                   </Reveal>
                   </div>
                 </div>

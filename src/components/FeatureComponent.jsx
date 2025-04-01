@@ -1,4 +1,5 @@
 import HeroSectionCode from "./HeroSectionCode"
+import phone from '../assets/phone.jpg'
 import { useTransform, motion } from "motion/react"
 import { Reveal } from "../utils/Reveal"
 
