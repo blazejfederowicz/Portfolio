@@ -42,7 +42,7 @@ export const ImageSlider =()=>{
             img:image1, 
             href:'https://the-calm-corner.onrender.com/',
             title:"The Calm Corner",
-            stack:"Bootstrap Node.Js Express.Js JavaScript EJS",
+            stack:"Bootstrap Node.Js Express.Js JavaScript JQuery EJS",
             desc:"A blogging platform that allows users to create and share posts. It offers various design options, a preview feature before publishing, and the ability to edit or delete posts as needed."
         },
         {
@@ -61,17 +61,16 @@ export const ImageSlider =()=>{
         }
     ]
 
-    const positions = ()=>{
-        if(positionIndexes===1){
-            setPosition(['left','center','right'])
-        } else if(positionIndexes ===2){
-            setPosition(['left1','left','center'])
-        } else{
-            setPosition(['center','right','right1'])
-        }
-    }
-
     useEffect(()=>{
+        const positions = ()=>{
+            if(positionIndexes===1){
+                setPosition(['left','center','right'])
+            } else if(positionIndexes ===2){
+                setPosition(['left1','left','center'])
+            } else{
+                setPosition(['center','right','right1'])
+            }
+        }
         positions()
     },[positionIndexes])
 
@@ -98,7 +97,7 @@ export const ImageSlider =()=>{
 
             setTranslateX(newTranslateX);
 
-    },[windowSize, positionIndexes])
+    },[windowSize, positionIndexes, images.length])
 
     const variants = {
         center: {x:0,scale:1, zIndex:  10, cursor:'', filter:'none'},

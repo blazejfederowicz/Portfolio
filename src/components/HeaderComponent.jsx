@@ -1,6 +1,6 @@
 import NavbarComponent from "./NavbarComponent"
 import wave from '../assets/wave.svg';
-import pdf from '../assets/en-CV-Blazej-Federowicz.pdf'
+import pdf from '../assets/CV_EN.pdf'
 import {motion} from 'motion/react'
 import { Reveal } from "../utils/Reveal"
 import { useRef, useState } from "react"

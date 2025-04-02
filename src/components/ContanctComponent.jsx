@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import emailjs, { sendForm } from '@emailjs/browser';
-import { time } from "motion";
+import React, { useCallback, useEffect, useState } from "react";
+import emailjs from '@emailjs/browser';
 import { Reveal } from "../utils/Reveal";
 
 export default function ContactComponent() {
@@ -9,29 +8,25 @@ export default function ContactComponent() {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const [title, setTitle] = useState("")
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(true)
   const [stateMessage, setStateMessage] = useState(null);
 
-  const validateForm = () => {
+  const validateForm = useCallback( () => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!name.trim()) {
-      setError(true);
       return 'Name is required';
     }
     if (!email.trim() || !emailRegex.test(email)) {
-      setError(true);
       return 'Valid email is required';
     }
     if (!title.trim()) {
-      setError(true);
       return 'Title is required';
     }
     if (!message.trim()) {
-      setError(true);
       return 'Message is required';
     }
     return null;
-  };
+  },[name, email, message, title])
   
   const handleOnChange = (e, method) => {
     return method(e.target.value)
@@ -41,7 +36,7 @@ export default function ContactComponent() {
     if(!validateForm()){
       setStateMessage(null)
     }
-  },[name, email, message, title])
+  },[validateForm])
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -49,6 +44,7 @@ export default function ContactComponent() {
 
     const validationError = validateForm();
     if (validationError) {
+      setError(true);
       setStateMessage(validationError);
       setIsSubmitting(false);
       return;
@@ -67,23 +63,25 @@ export default function ContactComponent() {
       .then(
         (result) => {
           setError(false);
+          console.log(result);
+          setName('');
+          setEmail('');
+          setTitle('');
+          setMessage('');
           setStateMessage('Message sent!');
           setIsSubmitting(false);
           setTimeout(() => {
             setStateMessage(null);
-            setName('');
-            setEmail('');
-            setTitle('');
-            setMessage('');
           }, 5000);
         },
         (error) => {
           setError(true);
+          console.error(error);
           setStateMessage('Something went wrong, please try again later');
           setIsSubmitting(false);
           setTimeout(() => {
             setStateMessage(null);
-          }, 5000);
+          }, 3000);
         }
       );
     

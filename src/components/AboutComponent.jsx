@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react"
+import { useRef, useState } from "react"
 import guitar from '../assets/guitar.jpg';
 import fireworks from '../assets/fireworks.jpg';
 import laptop from '../assets/laptop.jpg';
