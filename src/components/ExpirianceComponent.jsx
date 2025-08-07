@@ -126,14 +126,17 @@ const ExpirianceComponent = ()=>{
                             <div className="p-6">
                                 <div className="mb-2 flex flex-wrap gap-x1 justify-between items-start">
                                     <h4 className="font-medium text-base sm:text-lg">Certifications</h4>
-                                    <span className="text-xs sm:text-sm text-indigo-100/60">Aug 2023 - Oct 2023</span>
                                 </div>
                                 <p className="text-indigo-100/60 mb-4 text-xs sm:text-sm">FreeCodeCamp.com</p>
                                 <ul className="space-y-2 relative list-disc ml-5 text-xs sm:text-sm">
                                     <li className="opacity-80 hover:opacity-100 active:opacity-100 transition-opacity">
+                                        <a href="https://certificates.epam.com/certificates/1c7f0121-d4e7-4287-a1b9-7d73d9c4c559" target="_blank" rel="noopener noreferrer" className="me-2">JavaScript Specialization Certificate</a>
+                                        <i className="bi bi-box-arrow-up-right"></i>
+                                    </li>
+                                    <li className="opacity-80 hover:opacity-100 active:opacity-100 transition-opacity">
                                         <a href="https://www.freecodecamp.org/certification/Fabiio/responsive-web-design" target="_blank" rel="noopener noreferrer" className="me-2">Responsive Web Design Certificate</a>
                                         <i className="bi bi-box-arrow-up-right"></i>
-                                        </li>
+                                    </li>
                                     <li className="opacity-80 hover:opacity-100 active:opacity-100 transition-opacity">
                                         <a href="https://www.freecodecamp.org/certification/Fabiio/javascript-algorithms-and-data-structures" target="_blank" rel="noopener noreferrer" className="me-2">Javascript Algorithms And Data Structures Certificate</a>
                                         <i className="bi bi-box-arrow-up-right"></i>
